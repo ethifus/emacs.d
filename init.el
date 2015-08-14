@@ -24,8 +24,8 @@
 
 
 (load "init-basics.el")
-(load "init-ibuffer.el")
 (load "init-packages.el")
+(load "init-ibuffer.el")
 (load "init-org.el")
 (load "init-ido.el")
 (load "init-eshell.el")
