@@ -39,10 +39,10 @@
   :init
   (global-pointback-mode))
 
-;; (use-package markdown-mode
-;;   :defer t
-;;   :ensure t
-;;   :mode "\\.md$")
+(use-package markdown-mode
+  :defer t
+  :ensure t
+  :mode "\\.md$")
 
 ;; package to present nice undo tree, activated with: C-x u
 (use-package undo-tree
