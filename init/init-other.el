@@ -2,16 +2,6 @@
   :ensure t
   :defer t)
 
-;; local package - no ensure
-(use-package graphene-speedbar
-  :defer t
-  :config
-  (speedbar-disable-update))
-
-(use-package sr-speedbar
-  :defer t
-  :ensure t)
-
 (use-package expand-region
   :ensure t
   :bind
@@ -79,14 +69,6 @@
 
 (use-package transpose-frame
   :ensure t)
-
-(use-package neotree
-  :ensure t
-  :defer t
-  :bind
-  ([f8] . neotree-toggle)
-  :init
-  (setq projectile-switch-project-action 'neotree-projectile-action))
 
 (use-package color-theme-sanityinc-tomorrow
   :ensure t)

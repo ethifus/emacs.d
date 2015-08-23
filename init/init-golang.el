@@ -2,8 +2,6 @@
 (setenv "GOROOT" (expand-file-name "~/.local/go"))
 (setenv "GOPATH" (expand-file-name "~/work/go"))
 
-(setq gofmt-command "goimports")
-
 ;; (use-package go-autocomplete
 ;;   :ensure t)
 
@@ -21,6 +19,8 @@
   :config
   ;;(require 'go-autocomplete)
   ;;(require 'auto-complete-config)
+  (setq gofmt-command "goimports")
+  
   (require 'go-eldoc)
 
   (add-hook 'go-mode-hook 'go-eldoc-setup)

@@ -31,5 +31,6 @@
 (load "init-eshell.el")
 (load "init-golang.el")
 (load "init-python.el")
+(load "init-filestree.el")
 (load "init-other.el")
 (load "init-custom-functions.el")
