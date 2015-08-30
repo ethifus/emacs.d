@@ -12,6 +12,13 @@
   :bind
   ([f9] . sr-speedbar-toggle))
 
+;; buildin package
+(use-package speedbar
+  :defer t
+  :init
+  (require 'graphene-speedbar)
+  (require 'projectile-speedbar nil t))
+
 (use-package neotree
   :ensure t
   :defer t

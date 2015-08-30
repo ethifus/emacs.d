@@ -44,12 +44,6 @@
   (setq undo-tree-visualizer-timestamp)
   (setq undo-tree-visualizer-diff t))
 
-;; enable Projectile globally
-(use-package projectile
-  :defer t
-  :config
-  (projectile-global-mode))
-
 (use-package web-mode
   :mode
   ("\\.phtml\\'"
