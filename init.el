@@ -6,17 +6,10 @@
 
 
 ;; add local paths to PATH enviroment
-(setenv "PATH" (concat (getenv "PATH")
-                       ":" (expand-file-name "~/.local/go/bin")
-                       ":" (expand-file-name "~/work/go/bin")
-                       ":" (expand-file-name "~/.local/bin")))
+(setenv "PATH" (concat (getenv "PATH") ":" (expand-file-name "~/.local/bin")))
 
 ;; add local binary locations
-(setq exec-path
-      (append exec-path
-              (list (expand-file-name "~/.local/go/bin")
-                    (expand-file-name "~/work/go/bin")
-                    (expand-file-name "~/.local/bin"))))
+(setq exec-path (append exec-path (list (expand-file-name "~/.local/bin"))))
 
 
 (add-to-list 'load-path "~/.emacs.d/lisp")  ;; path to custom modules

@@ -1,6 +1,17 @@
 ;; Golang
+
+;; Setup environment variables
 (setenv "GOROOT" (expand-file-name "~/.local/go"))
 (setenv "GOPATH" (expand-file-name "~/work/go"))
+
+(setenv "PATH" (concat (getenv "PATH")
+                       ":" (expand-file-name "~/.local/go/bin")
+                       ":" (expand-file-name "~/work/go/bin")))
+
+(setq exec-path
+      (append exec-path
+              (list (expand-file-name "~/.local/go/bin")
+                    (expand-file-name "~/work/go/bin"))))
 
 ;; (use-package go-autocomplete
 ;;   :ensure t)
