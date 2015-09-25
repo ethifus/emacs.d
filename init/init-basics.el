@@ -144,6 +144,10 @@
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
 
+;; invoke isearch-occur with C-o (default is M-s o) -- this shortcut
+;; is due to old habits
+(define-key isearch-mode-map (kbd "C-o") 'isearch-occur)
+
 (global-set-key (kbd "<XF86Back>") 'scroll-down)
 (global-set-key (kbd "<XF86Forward>") 'scroll-up)
 
@@ -171,12 +175,10 @@ are not asked which buffer they want to kill."
 
 (global-set-key (kbd "C-x C-k") 'kill-default-buffer)
 
-;; invoke isearch-occur with C-o (default is M-s o) -- this shortcut
-;; is due to old habits
-(define-key isearch-mode-map (kbd "C-o") 'isearch-occur)
-
 ;; clean up spaces
 (global-set-key (kbd "M-SPC") 'cycle-spacing)
+
+(global-set-key (kbd "<f2>") 'toggle-truncate-lines)
 
 ;; automatically close unused buffers
 (require 'midnight)
