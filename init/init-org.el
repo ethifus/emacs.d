@@ -5,4 +5,5 @@
   (setq org-src-fontify-natively t
         org-completion-use-ido t
         org-edit-timestamp-down-means-later t
-        org-export-kill-product-buffer-when-displayed t))
+        org-export-kill-product-buffer-when-displayed t
+        org-ellipsis "…"))

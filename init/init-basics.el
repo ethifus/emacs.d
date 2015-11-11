@@ -31,6 +31,9 @@
 (setq-default tab-width 4)
 (setq-default indent-line-function 'insert-tab)
 
+;; trust all themes
+(setq custom-safe-themes t)
+
 (server-start)
 
 ;; set frame title format 

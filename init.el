@@ -16,8 +16,8 @@
 (add-to-list 'load-path "~/.emacs.d/init")  ;; path to init scripts
 
 
-(load "init-basics.el")
 (load "init-packages.el")
+(load "init-basics.el")
 (load "init-ibuffer.el")
 (load "init-org.el")
 (load "init-ido.el")
