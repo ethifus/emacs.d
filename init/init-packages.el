@@ -1,13 +1,8 @@
 (require 'package)
 (package-initialize nil)
 (setq package-archives
-	  '(("gnu" . "http://elpa.gnu.org/packages/")
-        ;; ("marmalade" . "http://marmalade-repo.org/packages/")
-        ;; ("tromey" . "http://tromey.com/elpa/")
-        ("melpa" . "http://melpa.org/packages/")
-        ;; ("elpy" . "http://jorgenschaefer.github.io/packages/")
-        ))
-
+	  '(("gnu" . "https://elpa.gnu.org/packages/")
+        ("melpa" . "https://melpa.org/packages/")))
 
 (if (not (package-installed-p 'use-package))
     (progn
