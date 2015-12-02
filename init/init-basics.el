@@ -34,6 +34,9 @@
 ;; trust all themes
 (setq custom-safe-themes t)
 
+;; set default major-mode to text-mode
+(setq-default major-mode 'text-mode)
+
 (server-start)
 
 ;; set frame title format 
@@ -52,6 +55,8 @@
 
 ;; turn off blink cursor
 (blink-cursor-mode 0)
+
+(setq-default cursor-type 'bar)
 
 ;; highlight matching parentheses when the point is on them
 (show-paren-mode t)
