@@ -48,15 +48,12 @@
   (menu-bar-mode 0)  ;; remove menu bar
   (scroll-bar-mode 0)  ;; remove scroll bars
   (set-fringe-mode '(8 . 0))  ;; set fringe size
-  (global-hl-line-mode t))  ;; highlight current line
-
+  (global-hl-line-mode t)  ;; highlight current line
+  (blink-cursor-mode t)  ;; turn off blink cursor
+  (setq-default cursor-type 'bar))
+  
 ;; show current column number in status line
 (setq column-number-mode t)
-
-;; turn off blink cursor
-(blink-cursor-mode 0)
-
-(setq-default cursor-type 'bar)
 
 ;; highlight matching parentheses when the point is on them
 (show-paren-mode t)
