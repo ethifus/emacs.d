@@ -37,21 +37,33 @@
 ;; set default major-mode to text-mode
 (setq-default major-mode 'text-mode)
 
-(server-start)
 
 ;; set frame title format 
 (setq frame-title-format '(buffer-file-name "%f - Emacs" ("%b - Emacs")))
 
 (when window-system
-  (set-frame-font "DejaVuSansMono 11")
-  (tool-bar-mode 0)  ;; remove tool bar
-  (menu-bar-mode 0)  ;; remove menu bar
-  (scroll-bar-mode 0)  ;; remove scroll bars
-  (set-fringe-mode '(8 . 0))  ;; set fringe size
   (global-hl-line-mode t)  ;; highlight current line
-  (blink-cursor-mode t)  ;; turn off blink cursor
-  (setq-default cursor-type 'bar))
-  
+  (set-frame-font "DejaVuSansMono 11"))
+
+(defun setup-frame-decorations (frame)
+  "Setup frame decoration in window-system"
+  (with-selected-frame frame
+    (when (window-system frame)
+      (tool-bar-mode 0)  ;; remove tool bar
+      (menu-bar-mode 0)  ;; remove menu bar
+      (scroll-bar-mode t)  ;; remove scroll bars
+      (set-fringe-mode '(8 . 0))  ;; set fringe size
+      (blink-cursor-mode t)  ;; turn on blinking cursor
+      (setq-default cursor-type 'bar))))
+
+;; apply each frame setting
+(add-hook 'after-make-frame-functions 'setup-frame-decorations)
+
+
+;; start emacs server when not in daemon mode
+(if (not (daemonp)) (server-start))
+
+
 ;; show current column number in status line
 (setq column-number-mode t)
 
@@ -105,6 +117,7 @@
 
 ;; copy-paste should work with other X clients
 (setq-default x-select-enable-clipboard t
+              x-select-enable-primary t
               interprogram-paste-function 'x-cut-buffer-or-selection-value)
 
 ;; ignore case when completing filenames
