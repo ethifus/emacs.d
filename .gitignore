@@ -6,8 +6,13 @@
 /auto-save-list
 /ac-comphist.dat
 /.emacs.desktop
+/.emacs.desktop.lock
 /.python-environments
 /projectile-bookmarks.eld
 /frame-restore-parameters
 /custom.el
 /smex-items
+/places
+/recentf
+/session.*
+/ido.last
