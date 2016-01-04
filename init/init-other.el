@@ -16,13 +16,6 @@
   :ensure t
   :defer t)
 
-;; (use-package rainbow-mode
-;;   :ensure t
-;;   :config
-;;   ;; Load both major and minor modes in one call based on file type
-;;   (defun all-css-modes() (css-mode) (rainbow-mode))
-;;   (add-to-list 'auto-mode-alist '("\\.css$" . all-css-modes)))
-
 (use-package pointback
   :defer t
   :ensure t
@@ -66,3 +59,13 @@
 
 (use-package color-theme-sanityinc-tomorrow
   :ensure t)
+
+;; racket and emacs-lisp modes configuration
+(use-package racket-mode
+  :ensure t)
+
+(use-package rainbow-delimiters
+  :ensure t
+  :init
+  (add-hook 'racket-mode-hook #'rainbow-delimiters-mode)
+  (add-hook 'emacs-lisp-mode-hook #'rainbow-delimiters-mode))
