@@ -37,7 +37,6 @@
 ;; set default major-mode to text-mode
 (setq-default major-mode 'text-mode)
 
-
 ;; set frame title format 
 (setq frame-title-format '(buffer-file-name "%f - Emacs" ("%b - Emacs")))
 
@@ -82,7 +81,7 @@
 ;; do smooth scrolling
 (setq scroll-margin 0
       scroll-conservatively 100000
-      scroll-preserve-screen-position 1)
+      scroll-preserve-screen-position t)
 
 ;; default row width
 (set-fill-column 80)
@@ -92,13 +91,13 @@
 (setq display-time-string-forms '(24-hours ":" minutes))
 
 ;; save buffers state and settings on emacs exit
-(desktop-save-mode 1)
+(desktop-save-mode t)
 
 ;; load session even if it's locked
 (setq desktop-load-locked-desktop t)
 
 ; save a list of recent files visited
-(recentf-mode 1)
+(recentf-mode t)
 
 ;; change all yes/no prompts to y/n
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -154,6 +153,19 @@
       (quote
        (read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt)))
 
+;; When popping the mark, continue popping until the cursor
+;; actually moves
+(defadvice pop-to-mark-command (around ensure-new-position activate)
+  (let ((p (point)))
+    (dotimes (i 10)
+      (when (= p (point)) ad-do-it))))
+
+(setq set-mark-command-repeat-pop t)
+
+;; automatically close unused buffers
+(require 'midnight)
+
+
 ;; custom key bindings
 
 ;; always search with regexps
@@ -198,9 +210,7 @@ are not asked which buffer they want to kill."
 
 (global-set-key (kbd "<f2>") 'toggle-truncate-lines)
 
-;; automatically close unused buffers
-(require 'midnight)
-
 ;; load custom settings (those changed with M-x customize)
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
+
