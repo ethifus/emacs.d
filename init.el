@@ -27,5 +27,6 @@
 (load "init-projectile.el")
 (load "init-filestree.el")
 (load "init-themes.el")
+(load "init-translate.el")
 (load "init-other.el")
 (load "init-custom-functions.el")

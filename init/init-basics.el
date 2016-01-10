@@ -87,9 +87,10 @@
 ;; default row width
 (set-fill-column 80)
 
-(display-time-mode t)
 (display-battery-mode t)
-(setq display-time-string-forms '(24-hours ":" minutes))
+
+;; (display-time-mode nil)
+;; (setq display-time-string-forms '(24-hours ":" minutes))
 
 ;; save buffers state and settings on emacs exit
 (desktop-save-mode 1)

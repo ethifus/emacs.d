@@ -6,4 +6,5 @@
         org-completion-use-ido t
         org-edit-timestamp-down-means-later t
         org-export-kill-product-buffer-when-displayed t
-        org-ellipsis "…"))
+        org-ellipsis "…"
+        org-support-shift-select t))
