@@ -1,8 +1,9 @@
 (use-package google-translate
   :ensure t
+  :bind
+  (("C-c t" . google-translate-at-point)
+   ("C-c T" . google-translate-query-translate))
   :init
   (require 'google-translate-default-ui)
   (setq google-translate-default-source-language "en")
-  (setq google-translate-default-target-language "pl")
-  (global-set-key (kbd "C-c t") 'google-translate-at-point)
-  (global-set-key (kbd "C-c T") 'google-translate-query-translate))
+  (setq google-translate-default-target-language "pl"))

@@ -31,6 +31,9 @@
 (setq-default tab-width 4)
 (setq-default indent-line-function 'insert-tab)
 
+;; do not ask for password to often
+(setq password-cache-expiry (* 60 15))
+
 ;; trust all themes
 (setq custom-safe-themes t)
 
@@ -40,9 +43,13 @@
 ;; set frame title format 
 (setq frame-title-format '(buffer-file-name "%f - Emacs" ("%b - Emacs")))
 
-(when window-system
-  (global-hl-line-mode t)  ;; highlight current line
-  (set-frame-font "DejaVuSansMono 11"))
+;; highlight current line
+(global-hl-line-mode t)
+
+;; remove menu bar
+(menu-bar-mode 0)
+
+(set-frame-font "DejaVuSansMono 11")
 
 (defun setup-frame-decorations (frame)
   "Setup frame decoration in window-system"
@@ -85,11 +92,6 @@
 
 ;; default row width
 (set-fill-column 80)
-
-(display-battery-mode t)
-
-;; (display-time-mode nil)
-;; (setq display-time-string-forms '(24-hours ":" minutes))
 
 ;; save buffers state and settings on emacs exit
 (desktop-save-mode t)

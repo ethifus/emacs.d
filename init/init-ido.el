@@ -20,6 +20,7 @@
   ;;       (all-completions "" obarray 'commandp))))))
   )
 
+;; Fuzzy matching for ido
 (use-package flx-ido
   :ensure t
   :init
@@ -28,8 +29,7 @@
 ;; Show recently and mostly used commands on M-x
 (use-package smex
   :ensure t
+  :bind
+  (("M-x" . smex))
   :config
-  (smex-initialize)
-  :init
-  (global-set-key (kbd "M-x") 'smex)
-  (global-set-key (kbd "M-X") 'smex))
+  (smex-initialize))
