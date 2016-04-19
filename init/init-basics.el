@@ -46,8 +46,9 @@
 ;; highlight current line
 (global-hl-line-mode t)
 
-;; remove menu bar
+;; remove menu bar and tool bar
 (menu-bar-mode 0)
+(tool-bar-mode 0)
 
 (set-frame-font "DejaVuSansMono 11")
 
@@ -91,7 +92,7 @@
       scroll-preserve-screen-position t)
 
 ;; default row width
-(set-fill-column 80)
+(setq-default fill-column 80)
 
 ;; save buffers state and settings on emacs exit
 (desktop-save-mode t)
