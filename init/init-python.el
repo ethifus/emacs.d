@@ -3,6 +3,9 @@
   :defer t
   :mode "\\.py\\'"
   :interpreter ("python" . python-mode)
+  :config
+  (define-key python-mode-map (kbd "C->") 'python-indent-shift-right)
+  (define-key python-mode-map (kbd "C-<") 'python-indent-shift-left)
   :init
   (add-hook
    'python-mode-hook
