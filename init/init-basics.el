@@ -169,6 +169,10 @@
 ;; automatically close unused buffers
 (require 'midnight)
 
+;; setup unique buffers name
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+
 
 ;; custom key bindings
 
