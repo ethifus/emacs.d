@@ -57,8 +57,16 @@
 (use-package transpose-frame
   :ensure t)
 
+;; Yasnippet package
+;; by default custom snippets should be placed in ~/.emacs.d/snippets
+(use-package yasnippet
+  :ensure t
+  :init
+  (yas-global-mode t))
+
 (use-package color-theme-sanityinc-tomorrow
   :ensure t)
+
 
 ;; racket and emacs-lisp modes configuration
 (use-package racket-mode
