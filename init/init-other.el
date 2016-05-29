@@ -1,6 +1,8 @@
 (use-package auto-complete
   :ensure t
-  :defer t)
+  :defer t
+  :config
+  (setq ac-show-menu-immediately-on-auto-complete t))
 
 (use-package expand-region
   :ensure t

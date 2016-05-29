@@ -11,7 +11,7 @@
    'python-mode-hook
    (lambda ()
      (setq py-smart-indentation nil)
-     (set1 indent-tabs-mode nil)
+     (setq indent-tabs-mode nil)
      (auto-complete-mode t)))
   (add-hook 'python-mode-hook 'jedi:setup))
 
