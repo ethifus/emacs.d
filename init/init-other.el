@@ -40,6 +40,7 @@
   (setq undo-tree-visualizer-diff t))
 
 (use-package web-mode
+  :ensure t
   :mode
   ("\\.phtml\\'"
    "\\.tpl\\.php\\'"
