@@ -42,3 +42,6 @@
 
 ;(load "$GOPATH/src/code.google.com/p/go.tools/cmd/oracle/oracle.el")
 ;(add-hook 'go-mode-hook 'go-oracle-mode)
+
+
+(provide 'init-golang)

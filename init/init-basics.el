@@ -222,3 +222,5 @@ are not asked which buffer they want to kill."
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
 
+
+(provide 'init-basics)

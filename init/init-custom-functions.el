@@ -70,3 +70,6 @@ forth between the most recent two buffers."
   (switch-to-buffer (other-buffer (current-buffer) 1)))
 
 (global-set-key (kbd "C-`") 'switch-to-previous-buffer)
+
+
+(provide 'init-custom-functions)

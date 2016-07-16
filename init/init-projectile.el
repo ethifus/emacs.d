@@ -9,3 +9,6 @@
 (use-package projectile-speedbar
   :defer t
   :ensure t)
+
+
+(provide 'init-projectile)

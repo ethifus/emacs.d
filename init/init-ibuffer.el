@@ -25,3 +25,6 @@
               filename-and-process)))
 
 (setq ibuffer-filter-group-name-face 'font-lock-doc-face)
+
+
+(provide 'init-ibuffer)

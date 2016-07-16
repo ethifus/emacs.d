@@ -5,3 +5,6 @@
 (setq eshell-smart-space-goes-to-end t)
 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+
+(provide 'init-eshell)

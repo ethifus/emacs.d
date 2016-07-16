@@ -21,3 +21,6 @@
   :init
   (setq jedi:setup-keys t)
   (setq jedi:complete-on-dot t))
+
+
+(provide 'init-python)

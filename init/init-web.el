@@ -54,3 +54,6 @@
               (lambda ()
                 (when (string-equals "tsx" (file-name-extension buffer-file-name))
                   (setup-tide-mode))))))
+
+
+(provide 'init-web)

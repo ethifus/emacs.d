@@ -52,10 +52,6 @@
   :init
   (yas-global-mode t))
 
-(use-package color-theme-sanityinc-tomorrow
-  :ensure t)
-
-
 ;; racket and emacs-lisp modes configuration
 (use-package racket-mode
   :ensure t)
@@ -65,3 +61,6 @@
   :init
   (add-hook 'racket-mode-hook #'rainbow-delimiters-mode)
   (add-hook 'emacs-lisp-mode-hook #'rainbow-delimiters-mode))
+
+
+(provide 'init-other)

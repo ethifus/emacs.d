@@ -26,3 +26,6 @@
 ;;   ([f8] . neotree-toggle)
 ;;   :init
 ;;   (setq projectile-switch-project-action 'neotree-projectile-action))
+
+
+(provide 'init-filestree)

@@ -33,3 +33,6 @@
   (("M-x" . smex))
   :config
   (smex-initialize))
+
+
+(provide 'init-ido)

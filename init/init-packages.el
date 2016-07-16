@@ -15,3 +15,6 @@
 ;;   (require 'use-package))
 ;; (require 'dimish)
 ;; (require 'bind-key)
+
+
+(provide 'init-packages)

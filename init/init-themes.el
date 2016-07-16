@@ -1,5 +1,8 @@
 ;; Configure color themes
 
+(use-package color-theme-sanityinc-tomorrow
+  :ensure t)
+
 (defun dark ()
   "Activate default dark theme (monokai)."
   (interactive)
@@ -13,3 +16,6 @@
   (use-package leuven-theme :ensure t)
   (disable-theme 'monokai)
   (load-theme 'leuven t))
+
+
+(provide 'init-themes)
