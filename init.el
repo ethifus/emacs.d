@@ -30,3 +30,4 @@
 (load "init-translate.el")
 (load "init-other.el")
 (load "init-custom-functions.el")
+(load "init-web.el")

@@ -24,10 +24,12 @@
   :init
   (global-pointback-mode))
 
+;; make sure to set `markdown-command'
 (use-package markdown-mode
   :defer t
   :ensure t
-  :mode "\\.md$")
+  :mode (("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode)))
 
 ;; package to present nice undo tree, activated with: C-x u
 (use-package undo-tree
@@ -39,23 +41,6 @@
   (setq undo-tree-visualizer-timestamp)
   (setq undo-tree-visualizer-diff t))
 
-(use-package web-mode
-  :ensure t
-  :mode
-  ("\\.phtml\\'"
-   "\\.tpl\\.php\\'"
-   "\\.jsp\\'"
-   "\\.as[cp]x\\'"
-   "\\.erb\\'"
-   "\\.mustache\\'"
-   "\\.djhtml\\'"
-   "\\.html?\\'"))
-
-(use-package js2-mode
-  :ensure t
-  :mode "\\.js\\'"
-  :config
-  (add-to-list 'interpreter-mode-alist '("node" . js2-mode)))
 
 (use-package transpose-frame
   :ensure t)
