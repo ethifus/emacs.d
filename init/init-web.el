@@ -1,7 +1,8 @@
 ;; requirements: node.js, npm, typescript
 
 (use-package company
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (defun setup-tide-mode ()
   (tide-setup)
@@ -15,6 +16,7 @@
 
 (use-package tide
   :ensure t
+  :defer t
   :init
   (add-hook 'typescript-mode-hook 'setup-tide-mode)
   (add-hook 'js2-mode-hook 'setup-tide-mode)
@@ -54,6 +56,10 @@
               (lambda ()
                 (when (string-equals "tsx" (file-name-extension buffer-file-name))
                   (setup-tide-mode))))))
+
+(use-package restclient
+  :ensure t
+  :defer t)
 
 
 (provide 'init-web)

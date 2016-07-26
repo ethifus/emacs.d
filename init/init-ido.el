@@ -1,6 +1,7 @@
 ;; Use ido-mode
 
 (use-package ido
+  :ensure t
   :init
   (setq ido-create-new-buffer 'always
         ido-enable-flex-matching t
@@ -8,17 +9,7 @@
         ido-use-filename-at-point 'guess
         ido-case-fold nil
         ido-use-faces nil)
-  (ido-mode t)
-  ;; (global-set-key
-  ;;  "\M-x"
-  ;;  (lambda ()
-  ;;    (interactive)
-  ;;    (call-interactively
-  ;;     (intern
-  ;;      (ido-completing-read
-  ;;       "M-x "
-  ;;       (all-completions "" obarray 'commandp))))))
-  )
+  (ido-mode t))
 
 ;; Fuzzy matching for ido
 (use-package flx-ido
