@@ -51,10 +51,10 @@
          "\\.html?\\'"
          "\\.tsx\\'")
   :config
-  (when (package-install-p 'tide)
+  (when (package-installed-p 'tide)
     (add-hook 'web-mode-hook
               (lambda ()
-                (when (string-equals "tsx" (file-name-extension buffer-file-name))
+                (when (string-equal "tsx" (file-name-extension buffer-file-name))
                   (setup-tide-mode))))))
 
 (use-package restclient
