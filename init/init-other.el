@@ -50,9 +50,11 @@
 (use-package yasnippet
   :ensure t
   :init
-  (yas-global-mode t))
+  (yas-global-mode t)
+  ;; disable yassnippet for term-mode
+  (add-hook 'term-mode-hook (lambda() (yas-minor-mode -1))))
 
-;; racket and emacs-lisp modes configuration
+;; mode and emacs-lisp modes configuration
 (use-package racket-mode
   :ensure t)
 
