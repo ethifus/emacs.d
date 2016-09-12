@@ -19,13 +19,5 @@
   (require 'graphene-speedbar)
   (require 'projectile-speedbar nil t))
 
-;; (use-package neotree
-;;   :ensure t
-;;   :defer t
-;;   :bind
-;;   ([f8] . neotree-toggle)
-;;   :init
-;;   (setq projectile-switch-project-action 'neotree-projectile-action))
-
 
 (provide 'init-filestree)

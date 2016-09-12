@@ -10,6 +10,7 @@
   (("C-=" . er/expand-region)
    ("C-+" . er/contract-region)))
 
+;; Writable grep buffer and apply the changes to files.
 (use-package wgrep
   :ensure t
   :defer t)
@@ -18,20 +19,21 @@
   :ensure t
   :defer t)
 
+;; Restore window points when returning to buffers.
 (use-package pointback
   :defer t
   :ensure t
   :init
   (global-pointback-mode))
 
-;; make sure to set `markdown-command'
+;; Make sure to set `markdown-command'.
 (use-package markdown-mode
   :defer t
   :ensure t
   :mode (("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode)))
 
-;; package to present nice undo tree, activated with: C-x u
+;; Package to present nice undo tree, activated with: C-x u.
 (use-package undo-tree
   :defer t
   :ensure t
@@ -41,12 +43,11 @@
   (setq undo-tree-visualizer-timestamp)
   (setq undo-tree-visualizer-diff t))
 
-
 (use-package transpose-frame
   :ensure t)
 
-;; Yasnippet package
-;; by default custom snippets should be placed in ~/.emacs.d/snippets
+;; Yasnippet package. By default custom snippets should be placed in
+;; ~/.emacs.d/snippets.
 (use-package yasnippet
   :ensure t
   :init
@@ -54,15 +55,20 @@
   ;; disable yassnippet for term-mode
   (add-hook 'term-mode-hook (lambda() (yas-minor-mode -1))))
 
-;; mode and emacs-lisp modes configuration
 (use-package racket-mode
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package rainbow-delimiters
   :ensure t
   :init
   (add-hook 'racket-mode-hook #'rainbow-delimiters-mode)
   (add-hook 'emacs-lisp-mode-hook #'rainbow-delimiters-mode))
+
+;; Display available keybindings in popup.
+(use-package which-key
+  :ensure t
+  :defer t)
 
 
 (provide 'init-other)

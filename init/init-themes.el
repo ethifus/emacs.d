@@ -1,4 +1,4 @@
-;; Configure color themes
+;; Configure color themes and switching between dark and light theme.
 
 (use-package color-theme-sanityinc-tomorrow
   :defer t
@@ -9,6 +9,10 @@
   :ensure t)
 
 (use-package leuven-theme
+  :defer t
+  :ensure t)
+
+(use-package gruvbox-theme
   :defer t
   :ensure t)
 

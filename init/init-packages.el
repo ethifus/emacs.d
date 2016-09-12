@@ -11,10 +11,6 @@
 
 (require 'use-package)
 (setq use-package-verbose t)
-;; (eval-when-compile
-;;   (require 'use-package))
-;; (require 'dimish)
-;; (require 'bind-key)
 
 
 (provide 'init-packages)

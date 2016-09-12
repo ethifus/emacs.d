@@ -15,6 +15,7 @@
 (add-to-list 'load-path (expand-file-name "init" user-emacs-directory))  ;; path to init scripts
 
 (require 'init-packages)
+(require 'init-themes)
 (require 'init-basics)
 (require 'init-ibuffer)
 (require 'init-org)
@@ -24,7 +25,6 @@
 (require 'init-python)
 (require 'init-projectile)
 (require 'init-filestree)
-(require 'init-themes)
 (require 'init-translate)
 (require 'init-other)
 (require 'init-custom-functions)
