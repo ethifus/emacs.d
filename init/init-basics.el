@@ -143,8 +143,8 @@
 (setq browse-url-browser-function 'browse-url-generic
 	  browse-url-generic-program "xdg-open")
 
-;; set regexp for tramp-shell, so that it would work with zsh
-(setq tramp-shell-prompt-pattern "^[^$>\n]*[#$%>] *\\(\[[0-9;]*[a-zA-Z] *\\)*")
+;; set faster method to access files through tramp
+(setq tramp-default-method "ssh")
 
 ;; save places in files between sessions
 (require 'saveplace)

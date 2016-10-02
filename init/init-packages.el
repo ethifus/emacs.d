@@ -1,5 +1,6 @@
 (require 'package)
-(package-initialize nil)
+(package-initialize)
+
 (setq package-archives
 	  '(("gnu" . "https://elpa.gnu.org/packages/")
         ("melpa" . "https://melpa.org/packages/")))

@@ -40,7 +40,7 @@
   :diminish undo-tree-mode
   :config
   (global-undo-tree-mode)
-  (setq undo-tree-visualizer-timestamp)
+  (setq undo-tree-visualizer-timestamp nil)
   (setq undo-tree-visualizer-diff t))
 
 (use-package transpose-frame
