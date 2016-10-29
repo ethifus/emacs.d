@@ -6,6 +6,9 @@
 
 
 ;; add local paths to PATH enviroment
+
+;; (package-initialize)
+
 (setenv "PATH" (concat (getenv "PATH") ":" (expand-file-name "~/.local/bin")))
 
 ;; add local binary locations
@@ -21,11 +24,15 @@
 (require 'init-org)
 (require 'init-ido)
 (require 'init-eshell)
-(require 'init-golang)
-(require 'init-python)
+
 (require 'init-projectile)
 (require 'init-filestree)
 (require 'init-translate)
 (require 'init-other)
 (require 'init-custom-functions)
+
+(require 'init-golang)
+(require 'init-python)
 (require 'init-web)
+(require 'init-irony)
+(require 'init-lisp)

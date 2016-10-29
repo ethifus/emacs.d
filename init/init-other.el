@@ -1,8 +1,9 @@
-(use-package auto-complete
+;; Use company-mode as a completion framework.
+(use-package company
   :ensure t
   :defer t
-  :config
-  (setq ac-show-menu-immediately-on-auto-complete t))
+  :init
+  (global-company-mode))
 
 (use-package expand-region
   :ensure t
@@ -40,8 +41,8 @@
   :diminish undo-tree-mode
   :config
   (global-undo-tree-mode)
-  (setq undo-tree-visualizer-timestamp nil)
-  (setq undo-tree-visualizer-diff t))
+  (setq undo-tree-visualizer-timestamp t)
+  (setq undo-tree-visualizer-diff nil))
 
 (use-package transpose-frame
   :ensure t)
@@ -55,20 +56,12 @@
   ;; disable yassnippet for term-mode
   (add-hook 'term-mode-hook (lambda() (yas-minor-mode -1))))
 
-(use-package racket-mode
-  :ensure t
-  :defer t)
-
-(use-package rainbow-delimiters
-  :ensure t
-  :init
-  (add-hook 'racket-mode-hook #'rainbow-delimiters-mode)
-  (add-hook 'emacs-lisp-mode-hook #'rainbow-delimiters-mode))
-
 ;; Display available keybindings in popup.
 (use-package which-key
   :ensure t
-  :defer t)
+  :diminish which-key-mode
+  :config
+  (which-key-mode))
 
 (use-package yaml-mode
   :ensure t

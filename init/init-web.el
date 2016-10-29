@@ -1,9 +1,5 @@
 ;; requirements: node.js, npm, typescript
 
-(use-package company
-  :ensure t
-  :defer t)
-
 (defun setup-tide-mode ()
   (tide-setup)
   (flycheck-mode 1)

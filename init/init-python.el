@@ -23,6 +23,13 @@
   (setq jedi:setup-keys t)
   (setq jedi:complete-on-dot t))
 
+;; Use company-mode instead of auto-complete with jedi.
+(use-package company-jedi
+  :ensure t
+  :init
+  (eval-after-load 'company
+    '(add-to-list 'company-backends 'company-jedi)))
+
 (use-package elpy
   :ensure t
   :defer t

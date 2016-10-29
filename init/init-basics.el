@@ -58,7 +58,7 @@
     (when (window-system frame)
       (tool-bar-mode 0)  ;; remove tool bar
       (menu-bar-mode 0)  ;; remove menu bar
-      (scroll-bar-mode t)  ;; remove scroll bars
+      (scroll-bar-mode 0)  ;; remove scroll bars
       (set-fringe-mode '(8 . 0))  ;; set fringe size
       (blink-cursor-mode t)  ;; turn on blinking cursor
       (setq-default cursor-type 'bar))))
@@ -200,6 +200,7 @@
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
 (global-set-key (kbd "C-c g") 'rgrep)
+(global-set-key (kbd "C-c f") 'find-name-dired)
 (global-set-key (kbd "M-1") 'delete-other-windows)
 (global-set-key (kbd "M-0") 'delete-window)
 (global-set-key (kbd "M-2") 'split-window-below)

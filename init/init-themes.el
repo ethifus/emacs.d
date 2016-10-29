@@ -4,10 +4,6 @@
   :defer t
   :ensure t)
 
-(use-package monokai-theme
-  :defer t
-  :ensure t)
-
 (use-package leuven-theme
   :defer t
   :ensure t)
@@ -25,7 +21,7 @@
   :group 'light-dark-themes
   :type '(string))
 
-(defcustom dark-theme-name "monokai"
+(defcustom dark-theme-name "gruvbox"
   "Dark color theme name."
   :group 'light-dark-themes
   :type '(string))
