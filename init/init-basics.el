@@ -173,6 +173,9 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
+;; allow to scroll during isearch
+(setq isearch-allow-scroll t)
+
 
 ;; custom key bindings
 

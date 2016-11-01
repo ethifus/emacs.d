@@ -2,6 +2,7 @@
 (use-package org
   :ensure t
   :mode ("\\.org\\'" . org-mode)
+  :bind (("C-c c" . org-capture))
   :config
   (setq org-src-fontify-natively t
         org-completion-use-ido t
@@ -13,7 +14,11 @@
   (font-lock-add-keywords
    'org-mode
    '(("^ +\\([-*]\\) "
-      (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•")))))))
+      (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+
+  (setq org-default-notes-file (concat org-directory "~/work/notes.org"))
+
+  (setq org-capture-templates                                                                                                                 '(("n" "Note" entry (file+datetree "~/work/notes.org")                                                                                   "* %?\n  %i" :empty-lines 1))))
 
 (use-package org-bullets
   :ensure t
