@@ -18,7 +18,9 @@
 
   (setq org-default-notes-file (concat org-directory "~/work/notes.org"))
 
-  (setq org-capture-templates                                                                                                                 '(("n" "Note" entry (file+datetree "~/work/notes.org")                                                                                   "* %?\n  %i" :empty-lines 1))))
+  (setq org-capture-templates
+        '(("n" "Note" entry (file+datetree "~/work/notes.org")
+           "* %?\n  %i"))))
 
 (use-package org-bullets
   :ensure t
