@@ -16,8 +16,7 @@
 (use-package speedbar
   :defer t
   :init
-  (require 'graphene-speedbar)
-  (require 'projectile-speedbar nil t))
+  (require 'graphene-speedbar))
 
 
 (provide 'init-filestree)

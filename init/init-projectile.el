@@ -10,9 +10,4 @@
                   (format " Proj[%s]" (projectile-project-name))))))
 
 
-(use-package projectile-speedbar
-  :defer t
-  :ensure t)
-
-
 (provide 'init-projectile)
