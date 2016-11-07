@@ -25,5 +25,13 @@
   :config
   (smex-initialize))
 
+(use-package ido-grid-mode
+  :ensure t
+  :init
+  (setq ido-grid-mode-min-rows 1
+        ido-grid-mode-max-rows 15
+        ido-grid-mode-prefix-scrolls t)
+  (ido-grid-mode t))
+
 
 (provide 'init-ido)
