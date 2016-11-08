@@ -33,5 +33,10 @@
         ido-grid-mode-prefix-scrolls t)
   (ido-grid-mode t))
 
+(use-package ido-ubiquitous
+  :ensure t
+  :init
+  (ido-ubiquitous-mode t))
+
 
 (provide 'init-ido)

@@ -25,7 +25,8 @@
   :defer t
   :ensure t
   :init
-  (global-pointback-mode))
+  (global-pointback-mode)
+  (setq magit-completing-read-function 'magit-ido-completing-read))
 
 ;; Make sure to set `markdown-command'.
 (use-package markdown-mode
