@@ -20,21 +20,6 @@
   :ensure t
   :defer t)
 
-;; Restore window points when returning to buffers.
-(use-package pointback
-  :defer t
-  :ensure t
-  :init
-  (global-pointback-mode)
-  (setq magit-completing-read-function 'magit-ido-completing-read))
-
-;; Make sure to set `markdown-command'.
-(use-package markdown-mode
-  :defer t
-  :ensure t
-  :mode (("\\.md\\'" . markdown-mode)
-         ("\\.markdown\\'" . markdown-mode)))
-
 ;; Package to present nice undo tree, activated with: C-x u.
 (use-package undo-tree
   :defer t
@@ -44,9 +29,6 @@
   (global-undo-tree-mode)
   (setq undo-tree-visualizer-timestamp t)
   (setq undo-tree-visualizer-diff nil))
-
-(use-package transpose-frame
-  :ensure t)
 
 ;; Yasnippet package. By default custom snippets should be placed in
 ;; ~/.emacs.d/snippets.
@@ -63,6 +45,32 @@
   :diminish which-key-mode
   :config
   (which-key-mode))
+
+
+;; Configuration related to movment and windows configuration.
+;; Restore window points when returning to buffers.
+(use-package pointback
+  :defer t
+  :ensure t
+  :init
+  (global-pointback-mode)
+  (setq magit-completing-read-function 'magit-ido-completing-read))
+
+(use-package transpose-frame
+  :ensure t)
+
+(use-package switch-window
+  :ensure t
+  :bind (("C-x o" . switch-window)))
+
+
+;; Additional file modes.
+;; Make sure to set `markdown-command'.
+(use-package markdown-mode
+  :defer t
+  :ensure t
+  :mode (("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode)))
 
 (use-package yaml-mode
   :ensure t
