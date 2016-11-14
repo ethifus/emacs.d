@@ -26,21 +26,21 @@
   :group 'light-dark-themes
   :type '(string))
 
-(defun enable-single-theme (theme)
+(defun eth/enable-single-theme (theme-symbol)
   (mapcar 'disable-theme custom-enabled-themes)
-  (let ((theme-symbol (intern theme)))
-    (load-theme theme-symbol)
-    (enable-theme theme-symbol)))
+  (load-theme theme-symbol)
+  (enable-theme theme-symbol)
+  (setq custom-enabled-themes (list theme-symbol)))
 
 (defun light ()
   "Activate light theme from `light-theme-name' variable."
   (interactive)
-  (enable-single-theme light-theme-name))
+  (eth/enable-single-theme (intern light-theme-name)))
 
 (defun dark ()
-  "Activate dark theme from `light-theme-name' variable."
+  "Activate dark theme from `dark-theme-name' variable."
   (interactive)
-  (enable-single-theme dark-theme-name))
+  (eth/enable-single-theme (intern dark-theme-name)))
 
 
 (provide 'init-themes)

@@ -3,7 +3,9 @@
   :ensure t
   :defer t
   :init
-  (global-company-mode))
+  (global-company-mode)
+  :config
+  (add-hook 'prog-mode-hook 'company-mode))
 
 (use-package expand-region
   :ensure t
@@ -43,7 +45,7 @@
 (use-package which-key
   :ensure t
   :diminish which-key-mode
-  :config
+  :init
   (which-key-mode))
 
 
@@ -58,11 +60,6 @@
 
 (use-package transpose-frame
   :ensure t)
-
-(use-package switch-window
-  :ensure t
-  :bind (("C-x o" . switch-window)))
-
 
 ;; Additional file modes.
 ;; Make sure to set `markdown-command'.

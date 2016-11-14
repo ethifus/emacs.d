@@ -41,8 +41,8 @@
   (interactive "*p")
   (move-text-internal (- arg)))
 
-(global-set-key (kbd "M-S-<up>")   'move-text-up)
-(global-set-key (kbd "M-S-<down>") 'move-text-down)
+(global-set-key (kbd "M-<up>")   'move-text-up)
+(global-set-key (kbd "M-<down>") 'move-text-down)
 
 
 (defun bf-pretty-print-xml-region (begin end)

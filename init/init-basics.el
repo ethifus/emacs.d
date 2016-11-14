@@ -55,13 +55,12 @@
 (defun setup-frame-decorations (frame)
   "Setup frame decoration in window-system"
   (with-selected-frame frame
-    (when (window-system frame)
-      (tool-bar-mode 0)  ;; remove tool bar
-      (menu-bar-mode 0)  ;; remove menu bar
-      (scroll-bar-mode 0)  ;; remove scroll bars
-      (set-fringe-mode '(8 . 0))  ;; set fringe size
-      (blink-cursor-mode t)  ;; turn on blinking cursor
-      (setq-default cursor-type 'bar))))
+    (tool-bar-mode 0)  ;; remove tool bar
+    (menu-bar-mode 0)  ;; remove menu bar
+    (scroll-bar-mode 0)  ;; remove scroll bars
+    (set-fringe-mode '(8 . 0))  ;; set fringe size
+    (blink-cursor-mode t)  ;; turn on blinking cursor
+    (setq-default cursor-type 'bar)))
 
 ;; apply each frame setting
 (add-hook 'after-make-frame-functions 'setup-frame-decorations)
@@ -157,7 +156,7 @@
       (quote
        (read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt)))
 
-;; When popping the mark, continue popping until the cursor
+;; when popping the mark, continue popping until the cursor
 ;; actually moves
 (defadvice pop-to-mark-command (around ensure-new-position activate)
   (let ((p (point)))
@@ -193,11 +192,12 @@
 (global-set-key (kbd "<XF86Forward>") 'scroll-up)
 
 ;; allows to switch windows with M-S-<up>, M-S-<down>, M-S-<left> and
-;; M-S-<right>
-(global-set-key (kbd "M-<left>")  'windmove-left)
-(global-set-key (kbd "M-<right>") 'windmove-right)
-(global-set-key (kbd "M-<up>")    'windmove-up)
-(global-set-key (kbd "M-<down>")  'windmove-down)
+;; M-S-<right>; bind-keys* allows to bind key sequence that is alway available
+(bind-keys*
+ ((kbd "M-S-<left>") . windmove-left)
+ ((kbd "M-S-<right>") . windmove-right)
+ ((kbd "M-S-<up>") . windmove-up)
+ ((kbd "M-S-<down>") . windmove-down))
 
 ;; list of recently opened files
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
