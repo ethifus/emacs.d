@@ -1,4 +1,4 @@
-;; enable Org functionality
+;; Enable Org functionality.
 (use-package org
   :ensure t
   :mode ("\\.org\\'" . org-mode)
@@ -19,8 +19,8 @@
   (setq org-default-notes-file (concat org-directory "~/work/notes.org"))
 
   (setq org-capture-templates
-        '(("n" "Note" entry (file+datetree "~/work/notes.org")
-           "* %?\n  %i"))))
+        '(("n" "Note" entry (file+datetree "~/work/notes.org") "* %?\n  %i")
+          ("w" "Words" item (file "~/work/words.org" "%?\n")))))
 
 (use-package org-bullets
   :ensure t

@@ -1,52 +1,49 @@
-;; don't show startup messages
+;; Don't show startup messages.
 (setq-default inhibit-startup-message t inhibit-startup-echo-area-message t)
 
-;; automatically sync buffer's content with files on disk
+;; Automatically sync buffer's content with files on disk.
 (global-auto-revert-mode t)
 (setq-default auto-revert-verbose nil)
 
-;; enable syntax highlighting
+;; Enable syntax highlighting.
 (global-font-lock-mode t)
 
-;; marked block will be highlighted
+;; Marked block will be highlighted.
 (setq-default transient-mark-mode t)
 
-;; replace marked block with input
+;; Replace marked block with input.
 (delete-selection-mode t)
 
-;; allways add new line on end of file
+;; Allways add new line on end of file.
 (setq-default require-final-newline t)
 
-;; enable incrementall complete in minibuffer
+;; Enable incrementall complete in minibuffer.
 (icomplete-mode t)
 
-;; turn off auto save
+;; Turn off auto save.
 (setq-default auto-save-default nil)
 
-;; turn off backup
+;; Turn off backup.
 (setq-default backup-inhibited t)
 
-;; force spaces instead of tabs
+;; Force spaces instead of tabs.
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq-default indent-line-function 'insert-tab)
 
-;; do not ask for password to often
+;; Do not ask for password to often.
 (setq password-cache-expiry (* 60 15))
 
-;; trust all themes
-(setq custom-safe-themes t)
-
-;; set default major-mode to text-mode
+;; Set default major-mode to text-mode.
 (setq-default major-mode 'text-mode)
 
-;; set frame title format 
+;; Set frame title format.
 (setq frame-title-format '(buffer-file-name "%f - Emacs" ("%b - Emacs")))
 
-;; highlight current line
+;; Highlight current line.
 (global-hl-line-mode t)
 
-;; remove menu bar and tool bar
+;; Remove menu bar and tool bar.
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 
@@ -62,102 +59,95 @@
     (blink-cursor-mode t)  ;; turn on blinking cursor
     (setq-default cursor-type 'bar)))
 
-;; apply each frame setting
+;; Apply each frame setting.
 (add-hook 'after-make-frame-functions 'setup-frame-decorations)
 
 
-;; start emacs server when not in daemon mode
+;; Start emacs server when not in daemon mode.
 (if (not (daemonp)) (server-start))
 
 
-;; show current column number in status line
+;; Show current column number in status line.
 (setq column-number-mode t)
 
-;; highlight matching parentheses when the point is on them
+;; Highlight matching parentheses when the point is on them.
 (show-paren-mode t)
 
-;; add closing bracket automatically
+;; Add closing bracket automatically.
 (electric-pair-mode t)
 
-;; Automatically indent on new line
-;(electric-indent-mode t)
-
-;; less flickery display
+;; Less flickery display.
 (setq redisplay-dont-pause t)
 
-;; do smooth scrolling
+;; Do smooth scrolling.
 (setq scroll-margin 0
       scroll-conservatively 100000
       scroll-preserve-screen-position t)
 
-;; default row width
+;; Default row width.
 (setq-default fill-column 80)
 
-;; save buffers state and settings on emacs exit
+;; Save buffers state and settings on emacs exit.
 (desktop-save-mode t)
 
-;; load session even if it's locked
+;; Load session even if it's locked.
 (setq desktop-load-locked-desktop t)
 
-; save a list of recent files visited
+; Save a list of recent files visited.
 (recentf-mode t)
 
-;; change all yes/no prompts to y/n
+;; Change all yes/no prompts to y/n.
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; set default C formatting style
-(setq-default c-default-style "stroustrup")
-
-;; use standard editing shortcuts for C-c, C-v, C-x, C-z
+;; Use standard editing shortcuts for C-c, C-v, C-x, C-z.
 (cua-mode t)
 
-;; don't tabify after rectangle commands
+;; Don't tabify after rectangle commands.
 (setq-default cua-auto-tabify-rectangles nil)
 
-;; standard Windows behaviour
+;; Standard Windows behaviour.
 (setq-default cua-keep-region-after-copy t)
 
-;; copy-paste should work with other X clients
+;; Copy-paste should work with other X clients.
 (setq-default x-select-enable-clipboard t
               x-select-enable-primary t
               interprogram-paste-function 'x-cut-buffer-or-selection-value)
 
-;; ignore case when completing filenames
+;; Ignore case when completing filenames.
 (setq completion-ignore-case t
       read-file-name-completion-ignore-case t)
 
-;; be smart about filenames in minibuffer
+;; Be smart about filenames in minibuffer.
 (file-name-shadow-mode t)
 
-;; stop C-<left/right> on CamelCases 
+;; Stop C-<left/right> on CamelCases.
 (global-subword-mode t)
 
-;; mode to undo/redo windows layout with C-<left>/C-<right>
+;; Mode to undo/redo windows layout with C-<left>/C-<right>.
 (winner-mode t)
 
-;; default to dabbrev-expand for the smart expand stuff
+;; Default to dabbrev-expand for the smart expand stuff.
 (global-set-key (kbd "M-/") 'dabbrev-expand)
 
-;; use xdg-open as a default browser
+;; Use xdg-open as a default browser.
 (setq browse-url-browser-function 'browse-url-generic
 	  browse-url-generic-program "xdg-open")
 
-;; set faster method to access files through tramp
+;; Set faster method to access files through tramp.
 (setq tramp-default-method "ssh")
 
-;; save places in files between sessions
+;; Save places in files between sessions.
 (require 'saveplace)
 (setq-default save-place t)
 
 (setq-default initial-scratch-message ";; scratch buffer created -- happy hacking\n")
 
-;; don't let the cursor go into minibuffer prompt
+;; Don't let the cursor go into minibuffer prompt.
 (setq minibuffer-prompt-properties
       (quote
        (read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt)))
 
-;; when popping the mark, continue popping until the cursor
-;; actually moves
+;; When popping the mark, continue popping until the cursor actually moves.
 (defadvice pop-to-mark-command (around ensure-new-position activate)
   (let ((p (point)))
     (dotimes (i 10)
@@ -165,41 +155,41 @@
 
 (setq set-mark-command-repeat-pop t)
 
-;; automatically close unused buffers
+;; Automatically close unused buffers.
 (require 'midnight)
 
-;; setup unique buffers name
+;; Setup unique buffers name.
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
-;; allow to scroll during isearch
+;; Allow to scroll during isearch.
 (setq isearch-allow-scroll t)
 
 
-;; custom key bindings
+;; Custom key bindings.
 
-;; always search with regexps
+;; Always search with regexps.
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
 
-;; invoke isearch-occur with C-o (default is M-s o) -- this shortcut
-;; is due to old habits
+;; Invoke isearch-occur with C-o (default is M-s o) -- this shortcut is due to
+;; old habits.
 (define-key isearch-mode-map (kbd "C-o") 'isearch-occur)
 
 (global-set-key (kbd "<XF86Back>") 'scroll-down)
 (global-set-key (kbd "<XF86Forward>") 'scroll-up)
 
-;; allows to switch windows with M-S-<up>, M-S-<down>, M-S-<left> and
-;; M-S-<right>; bind-keys* allows to bind key sequence that is alway available
+;; Allows to switch windows with M-<up>, M-<down>, M-<left> and M-<right>;
+;; bind-keys* allows to bind key sequence that is alway available.
 (bind-keys*
- ((kbd "M-S-<left>") . windmove-left)
- ((kbd "M-S-<right>") . windmove-right)
- ((kbd "M-S-<up>") . windmove-up)
- ((kbd "M-S-<down>") . windmove-down))
+ ((kbd "M-<left>") . windmove-left)
+ ((kbd "M-<right>") . windmove-right)
+ ((kbd "M-<up>") . windmove-up)
+ ((kbd "M-<down>") . windmove-down))
 
-;; list of recently opened files
+;; List of recently opened files.
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
 (global-set-key (kbd "C-c g") 'rgrep)
@@ -217,12 +207,13 @@ are not asked which buffer they want to kill."
 
 (global-set-key (kbd "C-x C-k") 'kill-default-buffer)
 
-;; clean up spaces
+;; Clean up spaces.
 (global-set-key (kbd "M-SPC") 'cycle-spacing)
 
 (global-set-key (kbd "<f2>") 'toggle-truncate-lines)
 
-;; load custom settings (those changed with M-x customize)
+
+;; Load custom settings (those changed with M-x customize).
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
 

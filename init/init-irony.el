@@ -1,4 +1,8 @@
-;; irony mode for C/CPP
+;; Irony mode for C/C++.
+
+;; Set default C formatting style.
+(setq-default c-default-style "stroustrup")
+
 (use-package irony
   :ensure t
   :config

@@ -1,4 +1,4 @@
-;; requirements: node.js, npm, typescript
+;; Requirements: node.js, npm, typescript.
 
 (defun setup-tide-mode ()
   (tide-setup)
@@ -53,6 +53,7 @@
                 (when (string-equal "tsx" (file-name-extension buffer-file-name))
                   (setup-tide-mode))))))
 
+;; Allow to quickly test requests to REST APIs.
 (use-package restclient
   :ensure t
   :defer t)

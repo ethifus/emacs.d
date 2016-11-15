@@ -1,5 +1,8 @@
 ;; Configure color themes and switching between dark and light theme.
 
+;; Trust all themes.
+(setq custom-safe-themes t)
+
 (use-package color-theme-sanityinc-tomorrow
   :defer t
   :ensure t)

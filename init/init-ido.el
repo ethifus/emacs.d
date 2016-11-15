@@ -1,4 +1,4 @@
-;; Use ido-mode
+;; Use ido-mode.
 
 (use-package ido
   :ensure t
@@ -11,13 +11,13 @@
         ido-use-faces nil)
   (ido-mode t))
 
-;; Fuzzy matching for ido
+;; Fuzzy matching for ido.
 (use-package flx-ido
   :ensure t
   :init
   (flx-ido-mode t))
 
-;; Show recently and mostly used commands on M-x
+;; Show recently and mostly used commands on M-x.
 (use-package smex
   :ensure t
   :bind
@@ -25,6 +25,7 @@
   :config
   (smex-initialize))
 
+;; Present ido search results as a grid.
 (use-package ido-grid-mode
   :ensure t
   :init

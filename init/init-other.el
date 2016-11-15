@@ -13,7 +13,7 @@
   (("C-=" . er/expand-region)
    ("C-+" . er/contract-region)))
 
-;; Writable grep buffer and apply the changes to files.
+;; Allows to edit grep buffer (with C-c C-p in grep buffer).
 (use-package wgrep
   :ensure t
   :defer t)
@@ -22,7 +22,7 @@
   :ensure t
   :defer t)
 
-;; Package to present nice undo tree, activated with: C-x u.
+;; Package to present nice undo tree, activated with C-x u.
 (use-package undo-tree
   :defer t
   :ensure t
@@ -38,7 +38,7 @@
   :ensure t
   :init
   (yas-global-mode t)
-  ;; disable yassnippet for term-mode
+  ;; Disable yassnippet for term-mode.
   (add-hook 'term-mode-hook (lambda() (yas-minor-mode -1))))
 
 ;; Display available keybindings in popup.

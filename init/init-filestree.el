@@ -1,6 +1,6 @@
-;; neotree and speedbar configuration
+;; Speedbar configuration.
 
-;; local package - no ensure
+;; Local package - no ensure.
 (use-package graphene-speedbar
   :defer t
   :config
@@ -12,7 +12,6 @@
   :bind
   ([f9] . sr-speedbar-toggle))
 
-;; buildin package
 (use-package speedbar
   :defer t
   :init

@@ -1,4 +1,4 @@
-;; replace standard buffers view with ibuffer
+;; Replace standard buffers view with ibuffer.
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (autoload 'ibuffer "ibuffer" "List buffers." t)
 (defalias 'list-buffers 'ibuffer)

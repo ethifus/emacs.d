@@ -36,6 +36,7 @@
   :init
   (elpy-enable))
 
+;; Hihghlight symbol under cursor.
 (use-package auto-highlight-symbol
   :ensure t
   :defer t)

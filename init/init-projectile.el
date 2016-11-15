@@ -1,4 +1,4 @@
-;; enable Projectile globally
+;; Enable Projectile globally.
 (use-package projectile
   :defer t
   :config
