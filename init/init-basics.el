@@ -189,9 +189,6 @@
  ((kbd "M-<up>") . windmove-up)
  ((kbd "M-<down>") . windmove-down))
 
-;; List of recently opened files.
-(global-set-key (kbd "C-x C-r") 'recentf-open-files)
-
 (global-set-key (kbd "C-c g") 'rgrep)
 (global-set-key (kbd "C-c f") 'find-name-dired)
 (global-set-key (kbd "M-1") 'delete-other-windows)

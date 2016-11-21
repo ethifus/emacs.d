@@ -55,10 +55,32 @@ by using nxml's indentation rules."
   (save-excursion
       (nxml-mode)
       (goto-char begin)
-      (while (search-forward-regexp "\>[ \\t]*\<" nil t) 
+      (while (search-forward-regexp "\>[ \\t]*\<" nil t)
         (backward-char) (insert "\n"))
       (indent-region begin end))
     (message "Ah, much better!"))
+
+
+(defun fd-switch-dictionary ()
+  "Toggle ispell dictionary."
+  (interactive)
+  (let* ((dic ispell-current-dictionary)
+         (change (if (string= dic "polish") "english" "polish")))
+    (ispell-change-dictionary change)
+    (message "Dictionary switched from %s to %s" dic change)))
+
+(global-set-key (kbd "<f8>") 'fd-switch-dictionary)
+
+
+;; List of recently opened files.
+(defun recentf-ido-find-file ()
+  "Find a recent file using Ido."
+  (interactive)
+  (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
+    (when file
+      (find-file file))))
+
+(global-set-key (kbd "C-x C-r") 'recentf-ido-find-file)
 
 
 (provide 'init-custom-functions)
