@@ -4,18 +4,17 @@
 ;; This file is free software licensed under the terms of the
 ;; GNU General Public License, version 3 or later.
 
-
-;; add local paths to PATH enviroment
-
 ;; (package-initialize)
 
+;; Add local paths to PATH enviroment.
 (setenv "PATH" (concat (getenv "PATH") ":" (expand-file-name "~/.local/bin")))
 
-;; add local binary locations
+;; Add local binary locations.
 (setq exec-path (append exec-path (list (expand-file-name "~/.local/bin"))))
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))  ;; path to custom modules
-(add-to-list 'load-path (expand-file-name "init" user-emacs-directory))  ;; path to init scripts
+;; Add path to custom modules and init scripts.
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "init" user-emacs-directory))
 
 (require 'init-packages)
 (require 'init-themes)

@@ -3,7 +3,6 @@
 
 ;; Automatically sync buffer's content with files on disk.
 (global-auto-revert-mode t)
-(setq-default auto-revert-verbose nil)
 
 ;; Enable syntax highlighting.
 (global-font-lock-mode t)
@@ -164,6 +163,9 @@
 
 ;; Allow to scroll during isearch.
 (setq isearch-allow-scroll t)
+
+;; Delete trailing whitespace before save.
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 
 ;; Custom key bindings.

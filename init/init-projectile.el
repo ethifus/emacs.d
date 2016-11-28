@@ -7,7 +7,9 @@
   (setq projectile-mode-line
         '(:eval (if (file-remote-p default-directory)
                     " Proj"
-                  (format " Proj[%s]" (projectile-project-name))))))
+                  (format " Proj[%s]" (projectile-project-name))))
+
+        projectile-completion-system 'ido))
 
 
 (provide 'init-projectile)

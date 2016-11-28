@@ -2,9 +2,8 @@
 (use-package company
   :ensure t
   :defer t
-  :init
-  (global-company-mode)
   :config
+  (global-company-mode)
   (add-hook 'prog-mode-hook 'company-mode))
 
 (use-package expand-region
@@ -18,19 +17,28 @@
   :ensure t
   :defer t)
 
+;; Interface to Git.
 (use-package magit
   :ensure t
-  :defer t)
+  :config
+  (setq magit-completing-read-function 'magit-ido-completing-read))
 
-;; Package to present nice undo tree, activated with C-x u.
+(use-package magit-popup
+  :ensure t)
+
+;; Present nice undo tree, activated with C-x u.
 (use-package undo-tree
   :defer t
   :ensure t
   :diminish undo-tree-mode
   :config
   (global-undo-tree-mode)
-  (setq undo-tree-visualizer-timestamp t)
-  (setq undo-tree-visualizer-diff nil))
+  (setq undo-tree-visualizer-timestamp t
+        undo-tree-visualizer-diff nil))
+
+;; On-the-fly syntax checking.
+(use-package flycheck
+  :ensure t)
 
 ;; Yasnippet package. By default custom snippets should be placed in
 ;; ~/.emacs.d/snippets.
@@ -45,23 +53,31 @@
 (use-package which-key
   :ensure t
   :diminish which-key-mode
-  :init
+  :config
   (which-key-mode))
+
+;; Display ugly ^L page breaks as tidy horizontal lines.
+(use-package page-break-lines
+  :ensure t
+  :config
+  (global-page-break-lines-mode))
 
 
 ;; Configuration related to movment and windows configuration.
+
 ;; Restore window points when returning to buffers.
 (use-package pointback
   :defer t
   :ensure t
-  :init
-  (global-pointback-mode)
-  (setq magit-completing-read-function 'magit-ido-completing-read))
+  :config
+  (global-pointback-mode))
 
 (use-package transpose-frame
   :ensure t)
 
+
 ;; Additional file modes.
+
 ;; Make sure to set `markdown-command'.
 (use-package markdown-mode
   :defer t

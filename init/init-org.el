@@ -2,7 +2,9 @@
 (use-package org
   :ensure t
   :mode ("\\.org\\'" . org-mode)
-  :bind (("C-c c" . org-capture))
+  :bind (("C-c c" . org-capture)
+         ("C-c l" . org-store-link)
+         ("C-c a" . org-agenda))
   :config
   (setq org-src-fontify-natively t
         org-completion-use-ido t
