@@ -1,7 +1,6 @@
 ;; Use company-mode as a completion framework.
 (use-package company
   :ensure t
-  :defer t
   :config
   (global-company-mode)
   (add-hook 'prog-mode-hook 'company-mode))
@@ -14,8 +13,11 @@
 
 ;; Allows to edit grep buffer (with C-c C-p in grep buffer).
 (use-package wgrep
-  :ensure t
-  :defer t)
+  :ensure t)
+
+;; Create new buffer for each grep results.
+(use-package grep-a-lot
+  :ensure t)
 
 ;; Interface to Git.
 (use-package magit
@@ -28,7 +30,6 @@
 
 ;; Present nice undo tree, activated with C-x u.
 (use-package undo-tree
-  :defer t
   :ensure t
   :diminish undo-tree-mode
   :config
@@ -68,7 +69,6 @@
 
 ;; Restore window points when returning to buffers.
 (use-package pointback
-  :defer t
   :ensure t
   :config
   (global-pointback-mode))
@@ -81,14 +81,12 @@
 
 ;; Make sure to set `markdown-command'.
 (use-package markdown-mode
-  :defer t
   :ensure t
   :mode (("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode)))
 
 (use-package yaml-mode
-  :ensure t
-  :defer t)
+  :ensure t)
 
 
 (provide 'init-other)

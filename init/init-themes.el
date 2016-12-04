@@ -4,15 +4,12 @@
 (setq custom-safe-themes t)
 
 (use-package color-theme-sanityinc-tomorrow
-  :defer t
   :ensure t)
 
 (use-package leuven-theme
-  :defer t
   :ensure t)
 
 (use-package gruvbox-theme
-  :defer t
   :ensure t)
 
 (defgroup light-dark-themes nil

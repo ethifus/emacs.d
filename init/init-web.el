@@ -12,7 +12,6 @@
 
 (use-package tide
   :ensure t
-  :defer t
   :init
   (add-hook 'typescript-mode-hook 'setup-tide-mode)
   (add-hook 'js2-mode-hook 'setup-tide-mode)
@@ -55,8 +54,7 @@
 
 ;; Allow to quickly test requests to REST APIs.
 (use-package restclient
-  :ensure t
-  :defer t)
+  :ensure t)
 
 
 (provide 'init-web)

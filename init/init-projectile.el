@@ -1,6 +1,5 @@
 ;; Enable Projectile globally.
 (use-package projectile
-  :defer t
   :config
   (projectile-global-mode)
   ;; workaroud of projectile's slowing down emacs on remote fs

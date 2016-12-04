@@ -1,6 +1,5 @@
 (use-package python-mode
   :ensure t
-  :defer t
   :mode "\\.py\\'"
   :interpreter ("python" . python-mode)
   :config
@@ -18,7 +17,6 @@
 
 (use-package jedi
   :ensure t
-  :defer t
   :init
   (setq jedi:setup-keys t
         jedi:complete-on-dot t))
@@ -32,7 +30,6 @@
 
 (use-package elpy
   :ensure t
-  :defer t
   :bind (:map elpy-mode-map
               ("M-." . elpy-goto-definition)
               ("M-," . pop-tag-mark))
@@ -43,8 +40,7 @@
 ;; Hihghlight symbol under cursor.
 (use-package auto-highlight-symbol
   :ensure t
-  :diminish highlight-mode
-  :defer t)
+  :diminish highlight-mode)
 
 
 (provide 'init-python)
