@@ -11,7 +11,7 @@
    (lambda ()
      (setq py-smart-indentation nil
            indent-tabs-mode nil)
-     (auto-complete-mode nil)
+     (auto-complete-mode nil) ;; disable auto-complete (use company-mode instead)
      (auto-highlight-symbol-mode)))
   (add-hook 'python-mode-hook 'jedi:setup))
 
@@ -28,14 +28,24 @@
   (eval-after-load 'company
     '(add-to-list 'company-backends 'company-jedi)))
 
+(defun elpy-goto-definition-or-rgrep ()
+  "Go to the definition of the symbol at point, if found. Otherwise, run `elpy-rgrep-symbol'."
+    (interactive)
+    (ring-insert find-tag-marker-ring (point-marker))
+    (condition-case nil (elpy-goto-definition)
+        (error (elpy-rgrep-symbol
+                (concat "\\(def\\|class\\)\s" (thing-at-point 'symbol) "(")))))
+
 (use-package elpy
   :ensure t
   :bind (:map elpy-mode-map
-              ("M-." . elpy-goto-definition)
+              ("M-." . elpy-goto-definition-or-rgrep)
               ("M-," . pop-tag-mark))
   :config
   (setq elpy-rpc-backend "jedi")
-  (elpy-enable))
+  :init
+  (elpy-enable)
+  (elpy-use-ipython))
 
 ;; Hihghlight symbol under cursor.
 (use-package auto-highlight-symbol

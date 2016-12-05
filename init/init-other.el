@@ -73,8 +73,8 @@
   :config
   (global-pointback-mode))
 
-(use-package transpose-frame
-  :ensure t)
+;; (use-package transpose-frame
+;;   :ensure t)
 
 
 ;; Additional file modes.

@@ -1,5 +1,6 @@
 ;; Don't show startup messages.
-(setq-default inhibit-startup-message t inhibit-startup-echo-area-message t)
+(setq-default inhibit-startup-message t
+              inhibit-startup-echo-area-message t)
 
 ;; Automatically sync buffer's content with files on disk.
 (global-auto-revert-mode t)
@@ -45,6 +46,7 @@
 ;; Remove menu bar and tool bar.
 (menu-bar-mode 0)
 (tool-bar-mode 0)
+(scroll-bar-mode 0)
 
 (set-frame-font "DejaVuSansMono 11")
 
@@ -58,13 +60,8 @@
     (blink-cursor-mode t)  ;; turn on blinking cursor
     (setq-default cursor-type 'bar)))
 
-;; Apply each frame setting.
+;; Apply settings to each frame.
 (add-hook 'after-make-frame-functions 'setup-frame-decorations)
-
-
-;; Start emacs server when not in daemon mode.
-(if (not (daemonp)) (server-start))
-
 
 ;; Show current column number in status line.
 (setq column-number-mode t)
@@ -210,6 +207,10 @@ are not asked which buffer they want to kill."
 (global-set-key (kbd "M-SPC") 'cycle-spacing)
 
 (global-set-key (kbd "<f2>") 'toggle-truncate-lines)
+
+
+;; Start emacs server when not in daemon mode.
+(if (not (daemonp)) (server-start))
 
 
 ;; Load custom settings (those changed with M-x customize).

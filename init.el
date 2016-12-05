@@ -17,8 +17,8 @@
 (add-to-list 'load-path (expand-file-name "init" user-emacs-directory))
 
 (require 'init-packages)
-(require 'init-themes)
 (require 'init-basics)
+(require 'init-themes)
 (require 'init-ibuffer)
 (require 'init-org)
 (require 'init-ido)

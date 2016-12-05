@@ -1,17 +1,18 @@
 ;; Speedbar configuration.
 
-;; Local package - no ensure.
-(use-package graphene-speedbar
-  :config
-  (speedbar-disable-update))
-
 (use-package sr-speedbar
   :ensure t
   :bind
   ([f9] . sr-speedbar-toggle))
 
+;; Local package - no ensure.
+(use-package graphene-speedbar
+  :config
+  (speedbar-disable-update))
+
+;; Local package
 (use-package speedbar
-  :init
+  :config
   (require 'graphene-speedbar))
 
 
