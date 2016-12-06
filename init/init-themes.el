@@ -1,10 +1,10 @@
 ;; Configure color themes and switching between dark and light theme.
 
-(use-package leuven-theme
-  :ensure t)
+;; (use-package leuven-theme
+;;   :ensure t)
 
-(use-package gruvbox-theme
-  :ensure t)
+;; (use-package gruvbox-theme
+;;   :ensure t)
 
 (defgroup light-dark-themes nil
   "Pair of light and dark color theme names used to switch with
