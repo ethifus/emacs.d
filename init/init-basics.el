@@ -72,9 +72,6 @@
 ;; Add closing bracket automatically.
 (electric-pair-mode t)
 
-;; Disable automatic indenting globally.
-(electric-indent-mode 0)
-
 ;; Less flickery display.
 (setq redisplay-dont-pause t)
 
