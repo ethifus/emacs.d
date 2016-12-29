@@ -12,9 +12,7 @@
      (setq py-smart-indentation nil
            indent-tabs-mode nil)
      (auto-complete-mode nil) ;; disable auto-complete (use company-mode instead)
-     (auto-highlight-symbol-mode)
-     (ispell-change-dictionary "english")
-     (flyspell-prog-mode)))
+     (auto-highlight-symbol-mode)))
   (add-hook 'python-mode-hook 'jedi:setup))
 
 (use-package jedi

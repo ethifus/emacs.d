@@ -164,6 +164,9 @@
 ;; Delete trailing whitespace before save.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; Default to english dictionary.
+(ispell-change-dictionary "english")
+
 
 ;; Custom key bindings.
 
