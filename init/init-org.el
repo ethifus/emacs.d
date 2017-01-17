@@ -18,8 +18,14 @@
    '(("^ +\\([-*]\\) "
       (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 
-  (setq org-default-notes-file (concat org-directory "~/work/notes.org"))
+  ;; Allow to execute code from SRC block in those languages.
+  (org-babel-do-load-languages 'org-babel-load-languages
+                               '((sh . t)
+                                 (gnuplot . t)
+                                 (python . t)
+                                 (emacs-lisp . t)))
 
+  (setq org-default-notes-file (concat org-directory "~/work/notes.org"))
   (setq org-capture-templates
         '(("n" "Note" entry (file+datetree "~/work/notes.org") "* %?\n  %i")
           ("w" "Words" item (file "~/work/words.org" "%?\n")))))
