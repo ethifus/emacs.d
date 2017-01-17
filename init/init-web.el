@@ -52,10 +52,8 @@
 ;; Allow to quickly test requests to REST APIs.
 (use-package restclient
   :ensure t
-  :config
-  (add-hook 'restclient-mode-hook
-            (lambda ()
-              (electric-indent-local-mode 0))))
+  :config)
+
 
 (use-package rainbow-mode
   :ensure t

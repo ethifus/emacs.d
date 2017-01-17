@@ -44,24 +44,27 @@
 (global-hl-line-mode t)
 
 ;; Remove menu bar and tool bar.
-(menu-bar-mode 0)
-(tool-bar-mode 0)
-(scroll-bar-mode 0)
+;; (menu-bar-mode 0)
+;; (tool-bar-mode 0)
+;; (scroll-bar-mode 0)
 
 (set-frame-font "DejaVuSansMono 11")
 
-(defun setup-frame-decorations (frame)
+(defun setup-frame-decorations ()
   "Setup frame decoration in window-system"
-  (with-selected-frame frame
-    (tool-bar-mode 0)  ;; remove tool bar
-    (menu-bar-mode 0)  ;; remove menu bar
-    (scroll-bar-mode 0)  ;; remove scroll bars
-    (set-fringe-mode '(8 . 0))  ;; set fringe size
-    (blink-cursor-mode t)  ;; turn on blinking cursor
-    (setq-default cursor-type 'bar)))
+  (tool-bar-mode 0)  ;; remove tool bar
+  (menu-bar-mode 0)  ;; remove menu bar
+  (scroll-bar-mode 0)  ;; remove scroll bars
+  (set-fringe-mode '(8 . 0))  ;; set fringe size
+  (blink-cursor-mode t)  ;; turn on blinking cursor
+  (setq-default cursor-type 'bar))
+
+(setup-frame-decorations)
 
 ;; Apply settings to each frame.
-(add-hook 'after-make-frame-functions 'setup-frame-decorations)
+(add-hook 'after-make-frame-functions
+          (lambda (frame)
+            (with-selected-frame frame (setup-frame-decorations))))
 
 ;; Show current column number in status line.
 (setq column-number-mode t)
@@ -71,6 +74,9 @@
 
 ;; Add closing bracket automatically.
 (electric-pair-mode t)
+
+;; Disable electric-indent-mode by default.
+(electric-indent-mode 0)
 
 ;; Less flickery display.
 (setq redisplay-dont-pause t)
