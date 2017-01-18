@@ -11,7 +11,9 @@
    (lambda ()
      (setq py-smart-indentation nil
            indent-tabs-mode nil)
-     (auto-complete-mode nil) ;; disable auto-complete (use company-mode instead)
+     ; Disable company-mode and enable auto-complete-mode because of jedi.
+     (company-mode nil)
+     (auto-complete-mode t)
      (auto-highlight-symbol-mode)
      (electric-indent-local-mode t)))
   (add-hook 'python-mode-hook 'jedi:setup))
