@@ -11,25 +11,17 @@
    (lambda ()
      (setq py-smart-indentation nil
            indent-tabs-mode nil)
-     ; Disable company-mode and enable auto-complete-mode because of jedi.
-     (company-mode nil)
-     (auto-complete-mode t)
      (auto-highlight-symbol-mode)
-     (electric-indent-local-mode t)))
-  (add-hook 'python-mode-hook 'jedi:setup))
-
-(use-package jedi
-  :ensure t
-  :init
-  (setq jedi:setup-keys t
-        jedi:complete-on-dot t))
+     (electric-indent-local-mode t))))
 
 ;; Use company-mode instead of auto-complete with jedi.
 (use-package company-jedi
   :ensure t
   :init
   (eval-after-load 'company
-    '(add-to-list 'company-backends 'company-jedi)))
+    '(add-to-list 'company-backends 'company-jedi))
+  (setq jedi:setup-keys t
+        jedi:complete-on-dot t))
 
 (defun elpy-goto-definition-or-rgrep ()
   "Go to the definition of the symbol at point, if found. Otherwise, run `elpy-rgrep-symbol'."
