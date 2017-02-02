@@ -47,5 +47,12 @@
   :ensure t
   :diminish highlight-mode)
 
+;; Maintain order in imports. This requires isort to be installed.
+(use-package py-isort
+  :ensure t
+  :init
+  (setq py-isort-options '("--lines=100" "--multi_line=3"))
+  (add-hook 'before-save-hook 'py-isort-before-save))
+
 
 (provide 'init-python)
