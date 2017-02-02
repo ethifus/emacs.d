@@ -51,8 +51,19 @@
 (use-package py-isort
   :ensure t
   :init
-  (setq py-isort-options '("--lines=100" "--multi_line=3"))
+  (setq py-isort-options '("--lines=100" "--multi_line=3" "--trailing-comma"))
   (add-hook 'before-save-hook 'py-isort-before-save))
+
+(defun isort-toggle-hook ()
+  "Toggle isort before-save-hook in current buffer."
+  (interactive)
+  (if (member 'py-isort-before-save before-save-hook)
+      (progn
+        (remove-hook 'before-save-hook 'py-isort-before-save)
+        (message "isort disabled"))
+    (progn
+      (add-hook 'before-save-hook 'py-isort-before-save)
+      (message "isort enabled"))))
 
 
 (provide 'init-python)
