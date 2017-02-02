@@ -171,7 +171,7 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; Default to english dictionary.
-(ispell-change-dictionary "english")
+(ispell-change-dictionary "english" t)
 
 
 ;; Custom key bindings.
