@@ -14,14 +14,14 @@
 
 (setq ibuffer-formats
       '((mark modified read-only vc-status-mini " "
-              (name 18 18 :left :elide)
+              (name 20 20 :left :elide)
               " "
               (size 9 -1 :right)
               " "
               (mode 16 16 :left :elide)
               " "
-              (vc-status 16 16 :left)
-              " "
+              ;; (vc-status 16 16 :left)
+              ;; " "
               filename-and-process)))
 
 (setq ibuffer-filter-group-name-face 'font-lock-doc-face)

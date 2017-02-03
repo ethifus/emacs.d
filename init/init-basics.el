@@ -43,13 +43,6 @@
 ;; Highlight current line.
 (global-hl-line-mode t)
 
-;; Remove menu bar and tool bar.
-;; (menu-bar-mode 0)
-;; (tool-bar-mode 0)
-;; (scroll-bar-mode 0)
-
-(set-frame-font "DejaVuSansMono 11")
-
 (defun setup-frame-decorations ()
   "Setup frame decoration in window-system"
   (tool-bar-mode 0)  ;; remove tool bar
@@ -57,7 +50,8 @@
   (scroll-bar-mode 0)  ;; remove scroll bars
   (set-fringe-mode '(8 . 0))  ;; set fringe size
   (blink-cursor-mode t)  ;; turn on blinking cursor
-  (setq-default cursor-type 'bar))
+  (setq-default cursor-type 'bar)
+  (set-frame-font "DejaVuSansMono 11"))
 
 (setup-frame-decorations)
 

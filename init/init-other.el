@@ -64,6 +64,14 @@
   :config
   (global-page-break-lines-mode))
 
+;; Build in package. Add ANSI colors in *compilation* buffer.
+(use-package ansi-color
+  :init
+  (defun my/ansi-colorize-buffer ()
+    (let ((buffer-read-only nil))
+      (ansi-color-apply-on-region (point-min) (point-max))))
+  (add-hook 'compilation-filter-hook 'my/ansi-colorize-buffer))
+
 
 ;; Configuration related to movment and windows configuration.
 
@@ -73,8 +81,9 @@
   :config
   (global-pointback-mode))
 
-;; (use-package transpose-frame
-;;   :ensure t)
+;; Allow to easily move frames.
+(use-package transpose-frame
+  :ensure t)
 
 
 ;; Additional file modes.

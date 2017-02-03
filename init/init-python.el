@@ -55,7 +55,7 @@
   (add-hook 'before-save-hook 'py-isort-before-save))
 
 (defun isort-toggle-hook ()
-  "Toggle isort before-save-hook in current buffer."
+  "Toggle isort before-save-hook."
   (interactive)
   (if (member 'py-isort-before-save before-save-hook)
       (progn
