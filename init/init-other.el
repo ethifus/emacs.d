@@ -72,6 +72,11 @@
       (ansi-color-apply-on-region (point-min) (point-max))))
   (add-hook 'compilation-filter-hook 'my/ansi-colorize-buffer))
 
+(use-package multiple-cursors
+  :ensure t
+  :bind
+  (("C-S-<mouse-1>" . mc/add-cursor-on-click)))
+
 
 ;; Configuration related to movment and windows configuration.
 
