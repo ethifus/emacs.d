@@ -97,7 +97,9 @@
 (use-package markdown-mode
   :ensure t
   :mode (("\\.md\\'" . markdown-mode)
-         ("\\.markdown\\'" . markdown-mode)))
+         ("\\.markdown\\'" . markdown-mode))
+  :config
+  (setq markdown-nested-imenu-heading-index t))
 
 (use-package yaml-mode
   :ensure t)

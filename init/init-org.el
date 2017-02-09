@@ -28,12 +28,22 @@
   (setq org-default-notes-file (concat org-directory "~/work/notes.org"))
   (setq org-capture-templates
         '(("n" "Note" entry (file+datetree "~/work/notes.org") "* %?\n  %i")
-          ("w" "Words" item (file "~/work/words.org" "%?\n")))))
+          ("w" "Words" item (file "~/work/words.org" "%?\n"))))
+
+  (add-hook 'org-mode-hook
+            (lambda () (progn (auto-fill-mode t) (flyspell-mode t)))))
 
 (use-package org-bullets
   :ensure t
   :init
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+;; Automatically detect language and setup flyspell-mode.
+(use-package guess-language
+  :ensure t
+  :init
+  (setq guess-language-languages '(en pl))
+  (add-hook 'text-mode-hook (lambda () (guess-language-mode 1))))
 
 
 (provide 'init-org)

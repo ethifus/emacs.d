@@ -14,5 +14,6 @@ Main features:
 External requirements:
 
  * elpy (jedi, autopep8, pyflakes)
+ * isort
  * markdown2
- * ispell
+ * ispell (with Polish and English dictionaries)
