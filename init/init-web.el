@@ -5,7 +5,9 @@
   (flycheck-mode 1)
   (setq flycheck-check-syntax-automatically '(save mode-enabled))
   (eldoc-mode 1)
-  (company-mode 1))
+  (tide-hl-identifier 1)
+  (company-mode 1)
+  (electric-indent-local-mode t))
 
 (use-package tide
   :ensure t
@@ -26,7 +28,7 @@
    :ensure t
    :mode "\\.js\\'"
    :config
-   (add-to-list 'interpreter-mode-alist '("node" . js2-mode)))
+   (add-to-list 'interpreter-mode-alist '("nodejs" . js2-mode)))
 
 (use-package typescript-mode
   :ensure t)

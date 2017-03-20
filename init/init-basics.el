@@ -116,10 +116,12 @@
 ;; Be smart about filenames in minibuffer.
 (file-name-shadow-mode t)
 
-;; Stop C-<left/right> on CamelCases.
-(global-subword-mode t)
+;; Stop cursor at CamelCase names with C-<left>/C-<right> movements.
+(use-package subword
+  :diminish subword-mode
+  :init (global-subword-mode t))
 
-;; Mode to undo/redo windows layout with C-<left>/C-<right>.
+;; Mode to undo/redo windows layout with C-c <left>/C-c <right>.
 (winner-mode t)
 
 ;; Default to dabbrev-expand for the smart expand stuff.
@@ -191,7 +193,7 @@
  ((kbd "M-<up>") . windmove-up)
  ((kbd "M-<down>") . windmove-down))
 
-(global-set-key (kbd "C-c g") 'rgrep)
+(global-set-key (kbd "C-c r") 'rgrep)
 (global-set-key (kbd "C-c f") 'find-name-dired)
 (global-set-key (kbd "M-1") 'delete-other-windows)
 (global-set-key (kbd "M-0") 'delete-window)

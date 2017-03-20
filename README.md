@@ -17,3 +17,8 @@ External requirements:
  * isort
  * markdown2
  * ispell (with Polish and English dictionaries)
+ * silversearcher-ag
+
+Packages for ubuntu:
+
+    apt install silversearcher-ag aspell aspell-pl aspell-en
