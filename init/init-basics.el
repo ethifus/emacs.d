@@ -53,7 +53,8 @@
   (setq-default cursor-type 'bar)
   (set-frame-font "DejaVuSansMono 11"))
 
-(setup-frame-decorations)
+(when (display-graphic-p)
+  (setup-frame-decorations))
 
 ;; Apply settings to each frame.
 (add-hook 'after-make-frame-functions

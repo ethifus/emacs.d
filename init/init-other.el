@@ -100,7 +100,8 @@
   :mode (("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
   :config
-  (setq markdown-nested-imenu-heading-index t))
+  (setq markdown-nested-imenu-heading-index t
+        markdown-command "markdown2"))
 
 (use-package yaml-mode
   :ensure t)
