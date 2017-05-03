@@ -61,6 +61,10 @@
           (lambda (frame)
             (with-selected-frame frame (setup-frame-decorations))))
 
+;; Default frame geometry.
+(add-to-list 'default-frame-alist '(height . 35))
+(add-to-list 'default-frame-alist '(width . 120))
+
 ;; Show current column number in status line.
 (setq column-number-mode t)
 

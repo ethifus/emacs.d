@@ -26,15 +26,23 @@
   (enable-theme theme-symbol)
   (setq custom-enabled-themes (list theme-symbol)))
 
+(defun eth/tone-down-fringes ()
+  "Set fringes color to the same as background color."
+  (set-face-attribute 'fringe nil
+                      :foreground (face-foreground 'default)
+                      :background (face-background 'default)))
+
 (defun light ()
   "Activate light theme from `light-theme-name' variable."
   (interactive)
-  (eth/enable-single-theme (intern light-theme-name)))
+  (eth/enable-single-theme (intern light-theme-name))
+  (eth/tone-down-fringes))
 
 (defun dark ()
   "Activate dark theme from `dark-theme-name' variable."
   (interactive)
-  (eth/enable-single-theme (intern dark-theme-name)))
+  (eth/enable-single-theme (intern dark-theme-name))
+  (eth/tone-down-fringes))
 
 
 (provide 'init-themes)

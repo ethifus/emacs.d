@@ -37,7 +37,16 @@
               ("M-." . elpy-goto-definition-or-rgrep)
               ("M-," . pop-tag-mark))
   :config
-  (setq elpy-rpc-backend "jedi")
+  (setq
+   elpy-rpc-backend "jedi"
+   elpy-modules
+   (quote (elpy-module-company
+           elpy-module-eldoc
+           elpy-module-flymake
+           elpy-module-pyvenv
+           elpy-module-yasnippet
+           elpy-module-django
+           elpy-module-sane-defaults)))
   :init
   (elpy-enable)
   (elpy-use-ipython))
