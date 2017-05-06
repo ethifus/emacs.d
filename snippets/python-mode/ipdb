@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Interactive python debugger
+# key: ipdb
+# --
+import ipdb; ipdb.set_trace()

@@ -38,6 +38,8 @@
               ("M-," . pop-tag-mark))
   :config
   (setq
+   python-shell-interpreter "python3"
+   elpy-rpc-python-command "python3"
    elpy-rpc-backend "jedi"
    elpy-modules
    (quote (elpy-module-company

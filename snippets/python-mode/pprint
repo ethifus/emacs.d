@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Import pretty print
+# key: pp
+# --
+from pprint import pprint

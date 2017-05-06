@@ -28,6 +28,7 @@
 
 (defun eth/tone-down-fringes ()
   "Set fringes color to the same as background color."
+  (interactive)
   (set-face-attribute 'fringe nil
                       :foreground (face-foreground 'default)
                       :background (face-background 'default)))
