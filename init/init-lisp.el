@@ -1,8 +1,5 @@
 ;; Anything connected with lisp editing (racket, elisp, etc.).
 
-(use-package racket-mode
-  :ensure t)
-
 (use-package rainbow-delimiters
   :ensure t
   :init

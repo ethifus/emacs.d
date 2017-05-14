@@ -1,21 +1,14 @@
-;; -*- mode: Emacs-Lisp; folding-mode:t -*-
-;; Copyright (C) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016 Bartosz Biały
+;; -*- mode: Emacs-Lisp; folding-mode: t -*-
+;; Copyright (C) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017 Bartosz Biały
 ;;
 ;; This file is free software licensed under the terms of the
 ;; GNU General Public License, version 3 or later.
 
 ;; (package-initialize)
 
-;; Add local paths to PATH enviroment.
-(setenv "PATH" (concat (getenv "PATH") ":" (expand-file-name "~/.local/bin")))
-
-;; Add local binary locations.
-(setq exec-path (append exec-path (list (expand-file-name "~/.local/bin"))))
-
-;; Add path to custom modules and init scripts.
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "init" user-emacs-directory))
 
+(require 'init-paths)
 (require 'init-packages)
 (require 'init-basics)
 (require 'init-themes)

@@ -12,7 +12,8 @@
         org-export-kill-product-buffer-when-displayed t
         org-ellipsis "…"
         org-support-shift-select t
-        org-hide-emphasis-markers t)
+        org-hide-emphasis-markers t
+        org-clock-into-drawer nil)
   (font-lock-add-keywords
    'org-mode
    '(("^ +\\([-*]\\) "

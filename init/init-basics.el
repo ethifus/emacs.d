@@ -3,7 +3,10 @@
               inhibit-startup-echo-area-message t)
 
 ;; Automatically sync buffer's content with files on disk.
-(global-auto-revert-mode t)
+(use-package auto-revert-mode
+  :diminish t
+  :init
+  (global-auto-revert-mode t))
 
 ;; Enable syntax highlighting.
 (global-font-lock-mode t)

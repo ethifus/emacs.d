@@ -91,6 +91,9 @@
 (use-package transpose-frame
   :ensure t)
 
+(use-package browse-kill-ring
+  :ensure t
+  :bind ("C-c k" . browse-kill-ring))
 
 ;; Additional file modes.
 

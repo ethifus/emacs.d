@@ -1,10 +1,12 @@
 (use-package python-mode
   :ensure t
   :mode "\\.py\\'"
-  :interpreter ("python" . python-mode)
+  :interpreter (("python" . python-mode)
+                ("python3" . python-mode))
   :config
   (define-key python-mode-map (kbd "C->") 'python-indent-shift-right)
   (define-key python-mode-map (kbd "C-<") 'python-indent-shift-left)
+  (setq python-python-command "python3")
   :init
   (add-hook
    'python-mode-hook
@@ -12,7 +14,8 @@
      (setq py-smart-indentation nil
            indent-tabs-mode nil)
      (auto-highlight-symbol-mode)
-     (electric-indent-local-mode t))))
+     (electric-indent-local-mode t)
+     (flycheck-mode))))
 
 ;; Use company-mode instead of auto-complete with jedi.
 (use-package company-jedi
@@ -38,17 +41,23 @@
               ("M-," . pop-tag-mark))
   :config
   (setq
-   python-shell-interpreter "python3"
    elpy-rpc-python-command "python3"
    elpy-rpc-backend "jedi"
    elpy-modules
    (quote (elpy-module-company
            elpy-module-eldoc
-           elpy-module-flymake
+           ;; elpy-module-flymake
            elpy-module-pyvenv
            elpy-module-yasnippet
            elpy-module-django
            elpy-module-sane-defaults)))
+
+  ;; Set `elpy-rpc-python-command' to "python" when virtual environment is
+  ;; activated, otherwise use "python3" by default.
+  (add-hook 'pyvenv-post-activate-hooks
+            (lambda () (setq elpy-rpc-python-command "python")))
+  (add-hook 'pyvenv-post-deactivate-hooks
+            (lambda () (setq elpy-rpc-python-command "python3")))
   :init
   (elpy-enable)
   (elpy-use-ipython))
