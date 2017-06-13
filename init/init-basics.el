@@ -6,7 +6,9 @@
 (use-package auto-revert-mode
   :diminish t
   :init
-  (global-auto-revert-mode t))
+  (global-auto-revert-mode t)
+  (require 'diminish)
+  (diminish 'auto-revert-mode))
 
 ;; Enable syntax highlighting.
 (global-font-lock-mode t)
