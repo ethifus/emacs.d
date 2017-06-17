@@ -1,34 +1,28 @@
 ;; Requirements: node.js, npm, typescript.
 
-(defun setup-tide-mode ()
-  (tide-setup)
-  (flycheck-mode 1)
-  (setq flycheck-check-syntax-automatically '(save mode-enabled))
-  (eldoc-mode 1)
-  (tide-hl-identifier 1)
-  (company-mode 1)
-  (electric-indent-local-mode t))
-
-(use-package tide
-  :ensure t
-  :init
-  (add-hook 'typescript-mode-hook 'setup-tide-mode)
-  (add-hook 'js2-mode-hook 'setup-tide-mode)
-  :config
-  ;; format options
-  (setq tide-format-options
-        '(:insertSpaceAfterFunctionKeywordForAnonymousFunctions t
-          :placeOpenBraceOnNewLineForFunctions nil))
-  ;; formats the buffer before saving
-  (add-hook 'before-save-hook 'tide-format-before-save)
-  ;; aligns annotation to the right hand side
-  (setq company-tooltip-align-annotations t))
 
 (use-package js2-mode
    :ensure t
    :mode "\\.js\\'"
    :config
-   (add-to-list 'interpreter-mode-alist '("nodejs" . js2-mode)))
+   (add-to-list 'interpreter-mode-alist '("nodejs" . js2-mode))
+   (add-hook 'js2-mode-hook #'js2-imenu-extras-mode))
+
+(use-package js2-refactor
+  :ensure t
+  :config
+  (add-hook 'js2-mode-hook #'js2-refactor-mode)
+  (js2r-add-keybindings-with-prefix "C-c C-r")
+  (define-key js2-mode-map (kbd "C-k") #'js2r-kill))
+
+(use-package xref-js2
+  :ensure t
+  :config
+  (define-key js-mode-map (kbd "M-.") nil)
+  (add-hook
+   'js2-mode-hook
+   (lambda ()
+     (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t))))
 
 (use-package typescript-mode
   :ensure t)
@@ -43,13 +37,7 @@
          "\\.mustache\\'"
          "\\.djhtml\\'"
          "\\.html?\\'"
-         "\\.tsx\\'")
-  :config
-  (when (package-installed-p 'tide)
-    (add-hook 'web-mode-hook
-              (lambda ()
-                (when (string-equal "tsx" (file-name-extension buffer-file-name))
-                  (setup-tide-mode))))))
+         "\\.tsx\\'"))
 
 ;; Allow to quickly test requests to REST APIs.
 (use-package restclient

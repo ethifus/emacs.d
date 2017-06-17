@@ -51,6 +51,7 @@
            elpy-module-yasnippet
            elpy-module-django
            elpy-module-sane-defaults)))
+  (setq ffip-prefer-ido-mode t)
 
   ;; Set `elpy-rpc-python-command' to "python" when virtual environment is
   ;; activated, otherwise use "python3" by default.

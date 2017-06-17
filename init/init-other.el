@@ -95,6 +95,13 @@
   :ensure t
   :bind ("C-c k" . browse-kill-ring))
 
+(use-package imenu-list
+  :ensure t
+  :bind ("C-'" . imenu-list-smart-toggle)
+  :config
+  (setq imenu-list-focus-after-activation t))
+
+
 ;; Additional file modes.
 
 ;; Make sure to set `markdown-command'.
