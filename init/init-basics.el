@@ -148,7 +148,12 @@
 (require 'saveplace)
 (setq-default save-place t)
 
-(setq-default initial-scratch-message ";; scratch buffer created -- happy hacking\n")
+(setq-default initial-scratch-message
+              (message
+               ";; GNU Emacs %s, started on: %s, init time took: %s.\n"
+               emacs-version
+               (current-time-string)
+               (emacs-init-time)))
 
 ;; Don't let the cursor go into minibuffer prompt.
 (setq minibuffer-prompt-properties
@@ -169,9 +174,6 @@
 ;; Setup unique buffers name.
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
-
-;; Allow to scroll during isearch.
-(setq isearch-allow-scroll t)
 
 ;; Delete trailing whitespace before save.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
