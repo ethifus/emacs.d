@@ -15,5 +15,11 @@
   :config
   (require 'graphene-speedbar))
 
+(use-package projectile-speedbar
+  :ensure t
+  :init
+  (setq projectile-speedbar-enable nil))
+
+
 
 (provide 'init-filestree)

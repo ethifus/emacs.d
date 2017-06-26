@@ -59,6 +59,7 @@
             (lambda () (setq elpy-rpc-python-command "python")))
   (add-hook 'pyvenv-post-deactivate-hooks
             (lambda () (setq elpy-rpc-python-command "python3")))
+  (setenv "IPY_TEST_SIMPLE_PROMPT" "1")
   :init
   (elpy-enable)
   (elpy-use-ipython))
@@ -72,7 +73,7 @@
 (use-package py-isort
   :ensure t
   :init
-  (setq py-isort-options '("--lines=100" "--multi_line=3" "--trailing-comma"))
+  (setq py-isort-options '("--lines=100" "--multi-line=3" "--trailing-comma"))
   (add-hook 'before-save-hook 'py-isort-before-save))
 
 (defun isort-toggle-hook ()

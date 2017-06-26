@@ -68,10 +68,15 @@
 ;; Build in package. Add ANSI colors in *compilation* buffer.
 (use-package ansi-color
   :init
-  (defun my/ansi-colorize-buffer ()
+  (defun eth/ansi-colorize-buffer ()
     (let ((buffer-read-only nil))
       (ansi-color-apply-on-region (point-min) (point-max))))
-  (add-hook 'compilation-filter-hook 'my/ansi-colorize-buffer))
+  (add-hook 'compilation-filter-hook 'eth/ansi-colorize-buffer))
+
+;; Hihghlight changes in buffer after some operation.
+(use-package volatile-highlights
+  :ensure t
+  :diminish volatile-highlights-mode)
 
 (use-package multiple-cursors
   :ensure t
@@ -101,6 +106,10 @@
   :config
   (setq imenu-list-focus-after-activation t))
 
+;; Allow to open files inside docker containers.
+(use-package docker-tramp
+  :ensure t)
+
 
 ;; Additional file modes.
 
@@ -114,6 +123,9 @@
         markdown-command "markdown2"))
 
 (use-package yaml-mode
+  :ensure t)
+
+(use-package dockerfile-mode
   :ensure t)
 
 
