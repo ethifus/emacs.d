@@ -83,6 +83,13 @@
   :bind
   (("C-S-<mouse-1>" . mc/add-cursor-on-click)))
 
+;; Allow to move line or region up or down.
+(use-package move-text
+  :ensure t
+  :init
+  (global-set-key (kbd "M-S-<up>") 'move-text-up)
+  (global-set-key (kbd "M-S-<down>") 'move-text-down))
+
 
 ;; Configuration related to movment and windows configuration.
 
