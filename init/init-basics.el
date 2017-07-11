@@ -225,6 +225,8 @@ are not asked which buffer they want to kill."
 
 (global-set-key (kbd "<f2>") 'toggle-truncate-lines)
 
+;; Translate M-<tab> to C-<tab> to avoid clash with WM.
+(define-key function-key-map [(control tab)] [?\M-\t])
 
 ;; Start emacs server when not in daemon mode.
 (if (not (daemonp)) (server-start))
