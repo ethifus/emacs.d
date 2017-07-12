@@ -8,7 +8,8 @@
         ido-everywhere t
         ido-use-filename-at-point 'guess
         ido-case-fold nil
-        ido-use-faces nil)
+        ido-use-faces nil
+        ido-default-buffer-method 'selected-window)
   (ido-mode t))
 
 ;; Fuzzy matching for ido.
