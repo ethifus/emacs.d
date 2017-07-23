@@ -90,6 +90,11 @@
   (global-set-key (kbd "M-S-<up>") 'move-text-up)
   (global-set-key (kbd "M-S-<down>") 'move-text-down))
 
+;; Copy or cut whole line with M-w and C-w when no region is selected.
+(use-package whole-line-or-region
+  :ensure t
+  :diminish whole-line-or-region-mode)
+
 
 ;; Configuration related to movment and windows configuration.
 
