@@ -13,7 +13,8 @@
         org-ellipsis "…"
         org-support-shift-select t
         org-hide-emphasis-markers t
-        org-clock-into-drawer nil)
+        org-clock-into-drawer nil
+        org-imenu-depth 5)
   (font-lock-add-keywords
    'org-mode
    '(("^ +\\([-*]\\) "

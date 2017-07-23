@@ -1,11 +1,5 @@
 ;; Configure color themes and switching between dark and light theme.
 
-;; (use-package leuven-theme
-;;   :ensure t)
-
-;; (use-package gruvbox-theme
-;;   :ensure t)
-
 (defgroup light-dark-themes nil
   "Pair of light and dark color theme names used to switch with
  `light' and `dark' command.")
@@ -36,14 +30,21 @@
 (defun light ()
   "Activate light theme from `light-theme-name' variable."
   (interactive)
-  (eth/enable-single-theme (intern light-theme-name))
-  (eth/tone-down-fringes))
+  (eth/enable-single-theme (intern light-theme-name)))
 
 (defun dark ()
   "Activate dark theme from `dark-theme-name' variable."
   (interactive)
-  (eth/enable-single-theme (intern dark-theme-name))
-  (eth/tone-down-fringes))
+  (eth/enable-single-theme (intern dark-theme-name)))
+
+(defvar after-load-theme-hook nil
+  "Hook run after a color theme is loaded using `load-theme'.")
+
+(defadvice load-theme (after run-after-load-theme-hook activate)
+  "Run `after-load-theme-hook'."
+  (run-hooks 'after-load-theme-hook))
+
+(add-hook 'after-load-theme-hook 'eth/tone-down-fringes)
 
 
 (provide 'init-themes)

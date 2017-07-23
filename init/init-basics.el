@@ -133,6 +133,7 @@
 
 ;; Mode to undo/redo windows layout with C-c <left>/C-c <right>.
 (winner-mode t)
+(setq winner-ring-size 10)
 
 ;; Default to dabbrev-expand for the smart expand stuff.
 (global-set-key (kbd "M-/") 'dabbrev-expand)
