@@ -26,7 +26,7 @@
 (icomplete-mode t)
 
 ;; Turn off auto save.
-(setq-default auto-save-default nil)
+(setq auto-save-default nil)
 
 ;; Turn off backup.
 (setq-default backup-inhibited t)
@@ -92,6 +92,9 @@
 
 ;; Default row width.
 (setq-default fill-column 80)
+
+;; Enable visual bell.
+(setq visible-bell t)
 
 ;; Save buffers state and settings on emacs exit.
 (desktop-save-mode t)
@@ -162,10 +165,14 @@
        (read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt)))
 
 ;; When popping the mark, continue popping until the cursor actually moves.
-(defadvice pop-to-mark-command (around ensure-new-position activate)
+(defun modi/multi-pop-to-mark (orig-fun &rest args)
+  "Call ORIG-FUN until the cursor moves.
+Try the repeated popping up to 10 times."
   (let ((p (point)))
     (dotimes (i 10)
-      (when (= p (point)) ad-do-it))))
+      (when (= p (point))
+        (apply orig-fun args)))))
+(advice-add 'pop-to-mark-command :around #'modi/multi-pop-to-mark)
 
 (setq set-mark-command-repeat-pop t)
 

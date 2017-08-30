@@ -68,10 +68,12 @@
 ;; Build in package. Add ANSI colors in *compilation* buffer.
 (use-package ansi-color
   :init
-  (defun eth/ansi-colorize-buffer ()
-    (let ((buffer-read-only nil))
-      (ansi-color-apply-on-region (point-min) (point-max))))
-  (add-hook 'compilation-filter-hook 'eth/ansi-colorize-buffer))
+  (defun endless/colorize-compilation ()
+    "Colorize from `compilation-filter-start' to `point'."
+    (let ((inhibit-read-only t))
+      (ansi-color-apply-on-region
+       compilation-filter-start (point))))
+  (add-hook 'compilation-filter-hook #'endless/colorize-compilation))
 
 ;; Hihghlight changes in buffer after some operation.
 (use-package volatile-highlights
@@ -139,6 +141,14 @@
 
 (use-package dockerfile-mode
   :ensure t)
+
+(use-package kotlin-mode
+  :ensure t)
+
+(use-package flycheck-kotlin
+  :ensure t
+  :init
+  (add-hook 'kotlin-mode-hook 'flycheck-mode))
 
 
 (provide 'init-other)
