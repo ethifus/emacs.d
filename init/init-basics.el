@@ -120,7 +120,7 @@
 ;; Copy-paste should work with other X clients.
 (setq-default x-select-enable-clipboard t
               x-select-enable-primary t
-              interprogram-paste-function 'x-cut-buffer-or-selection-value)
+              interprogram-paste-function 'gui-selection-value)
 
 ;; Ignore case when completing filenames.
 (setq completion-ignore-case t
