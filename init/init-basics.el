@@ -2,6 +2,9 @@
 (setq-default inhibit-startup-message t
               inhibit-startup-echo-area-message t)
 
+(use-package diminish
+  :ensure t)
+
 ;; Automatically sync buffer's content with files on disk.
 (use-package auto-revert-mode
   :diminish t
@@ -177,7 +180,7 @@ Try the repeated popping up to 10 times."
 (setq set-mark-command-repeat-pop t)
 
 ;; Automatically close unused buffers.
-(require 'midnight)
+;(require 'midnight)
 
 ;; Setup unique buffers name.
 (require 'uniquify)

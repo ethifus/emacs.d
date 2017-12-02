@@ -35,8 +35,9 @@
           treemacs-show-hidden-files          t
           treemacs-never-persist              nil
           treemacs-is-never-other-window      nil
-          treemacs-goto-tag-strategy          'refetch-index)
-
+          treemacs-goto-tag-strategy          'refetch-index
+          treemacs-silent-filewatch           t
+          treemacs-silent-refresh             t)
     (treemacs-follow-mode t)
     (treemacs-filewatch-mode t))
   :bind
