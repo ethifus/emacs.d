@@ -124,6 +124,13 @@
 (use-package docker-tramp
   :ensure t)
 
+;; Use .editorconfig files.
+(use-package editorconfig
+  :ensure t
+  :diminish editorconfig-mode
+  :config
+  (editorconfig-mode 1))
+
 
 ;; Additional file modes.
 
