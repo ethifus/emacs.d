@@ -83,7 +83,11 @@
 (use-package multiple-cursors
   :ensure t
   :bind
-  (("C-S-<mouse-1>" . mc/add-cursor-on-click)))
+  (("C-S-<mouse-1>" . mc/add-cursor-on-click)
+   ("C-c m c" . mc/edit-lines)
+   ("C-c m e" . mc/edit-ends-of-lines)
+   ("C-c m a" . mc/mark-all-like-this)
+   ("C-c m n" . mc/mark-next-like-this)))
 
 ;; Allow to move line or region up or down.
 (use-package move-text
@@ -91,11 +95,6 @@
   :init
   (global-set-key (kbd "M-S-<up>") 'move-text-up)
   (global-set-key (kbd "M-S-<down>") 'move-text-down))
-
-;; Copy or cut whole line with M-w and C-w when no region is selected.
-(use-package whole-line-or-region
-  :ensure t
-  :diminish whole-line-or-region-mode)
 
 
 ;; Configuration related to movment and windows configuration.
