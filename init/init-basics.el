@@ -6,12 +6,9 @@
   :ensure t)
 
 ;; Automatically sync buffer's content with files on disk.
-(use-package auto-revert-mode
-  :diminish t
+(use-package autorevert
   :init
-  (global-auto-revert-mode t)
-  (require 'diminish)
-  (diminish 'auto-revert-mode))
+  (global-auto-revert-mode t))
 
 ;; Enable syntax highlighting.
 (global-font-lock-mode t)

@@ -45,6 +45,7 @@
   (run-hooks 'after-load-theme-hook))
 
 (add-hook 'after-load-theme-hook 'eth/tone-down-fringes)
+(eth/tone-down-fringes)
 
 
 (provide 'init-themes)
