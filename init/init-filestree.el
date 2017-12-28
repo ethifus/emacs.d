@@ -1,4 +1,4 @@
-;; Speedbar configuration.
+;; Filetree configuration.
 
 ;; (use-package sr-speedbar
 ;;   :ensure t
@@ -39,12 +39,12 @@
           treemacs-silent-filewatch           t
           treemacs-silent-refresh             t)
     (treemacs-follow-mode t)
-    (treemacs-filewatch-mode t))
-  :bind
-  (:map global-map ([f9] . treemacs-toggle)))
+    (treemacs-filewatch-mode t)))
 
 (use-package treemacs-projectile
   :ensure t
+  :bind
+  (:map global-map ([f9] . treemacs-projectile-toggle))
   :config
   (setq treemacs-header-function #'treemacs-projectile-create-header))
 
