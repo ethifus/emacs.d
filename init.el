@@ -27,4 +27,5 @@
 (require 'init-python)
 (require 'init-web)
 (require 'init-irony)
+(require 'init-web-typescript)
 (require 'init-lisp)

@@ -36,9 +36,6 @@
   (define-key tern-mode-keymap (kbd "M-.") nil)
   (define-key tern-mode-keymap (kbd "M-,") nil))
 
-(use-package typescript-mode
-  :ensure t)
-
 (use-package web-mode
   :ensure t
   :mode ("\\.phtml\\'"
