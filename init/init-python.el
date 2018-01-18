@@ -63,7 +63,8 @@
   (setenv "IPY_TEST_SIMPLE_PROMPT" "1")
   :init
   (elpy-enable)
-  (elpy-use-ipython))
+  (setq python-shell-interpreter "ipython"
+        python-shell-interpreter-args "-i --simple-prompt"))
 
 ;; Hihghlight symbol under cursor.
 (use-package auto-highlight-symbol

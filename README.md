@@ -15,14 +15,14 @@ Main features:
 
 External requirements:
 
- * elpy (jedi, autopep8, pyflakes)
- * isort
- * markdown2
- * ispell (with Polish and English dictionaries)
- * silversearcher-ag
- * tern (for JavaScript editing)
+ * elpy, isort (jedi, autopep8, pyflakes - required by `init-python.el`),
+ * markdown2,
+ * ispell (with Polish and English dictionaries),
+ * silversearcher-ag,
+ * node.js, npm and tern (for JavaScript editing - required by `init-web.el`),
+ * typescript (for TypeScript editing - required by `init-web-typescript.el`).
 
-Packages for ubuntu:
+Packages for Ubuntu:
 
     sudo apt install silversearcher-ag aspell aspell-pl aspell-en
 
