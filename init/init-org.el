@@ -27,12 +27,12 @@
                                  (python . t)
                                  (emacs-lisp . t)))
 
-  (setq org-default-notes-file "~/work/notes.org")
+  (setq org-default-notes-file "~/notes/notes.org")
   (setq org-capture-templates
-        '(("n" "Note" entry (file+datetree "~/work/notes.org") "* %?\n  %i")
-          ("w" "Words" item (file "~/work/words.org") "%?\n")
+        '(("n" "Note" entry (file+datetree "~/notes/notes.org") "* %?\n  %i")
+          ("w" "Words" item (file "~/notes/words.org") "%?\n")
           ("l" "Log time" entry
-           (file+datetree (expand-file-name (format-time-string "~/work/timeline_%Y.org") org-directory))
+           (file+datetree (expand-file-name (format-time-string "~/notes/work/timeline_%Y.org") org-directory))
            "**** %?\n    %i" :clock-in)))
 
   (add-hook 'org-mode-hook
