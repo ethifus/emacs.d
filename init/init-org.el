@@ -26,33 +26,26 @@
                                  (gnuplot . t)
                                  (python . t)
                                  (emacs-lisp . t)))
-
+  (add-hook 'org-mode-hook
+            (lambda ()
+              (progn
+                (auto-fill-mode t)
+                (setq ispell-local-dictionary "pl")
+                (flyspell-mode t))))
+  :init
   (setq org-default-notes-file "~/notes/notes.org")
   (setq org-capture-templates
         '(("n" "Note" entry (file+datetree "~/notes/notes.org") "* %?\n  %i")
           ("w" "Words" item (file "~/notes/words.org") "%?\n")
           ("l" "Log time" entry
            (file+datetree (expand-file-name (format-time-string "~/notes/work/timeline_%Y.org") org-directory))
-           "**** %?\n    %i" :clock-in)))
-
-  (add-hook 'org-mode-hook
-            (lambda ()
-              (progn
-                (auto-fill-mode t)
-                (setq ispell-local-dictionary "pl")
-                (flyspell-mode t)))))
+           "**** %?\n    %i" :clock-in t :clock-keep t)))
+  (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))))
 
 (use-package org-bullets
   :ensure t
   :init
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
-
-;; Automatically detect language and setup flyspell-mode.
-;; (use-package guess-language
-;;   :ensure t
-;;   :init
-;;   (setq guess-language-languages '(en pl))
-;;   (add-hook 'text-mode-hook (lambda () (guess-language-mode 1))))
 
 
 (provide 'init-org)

@@ -186,9 +186,6 @@ Try the repeated popping up to 10 times."
 ;; Delete trailing whitespace before save.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-;; Default to english dictionary.
-(ispell-change-dictionary "english" t)
-
 
 ;; Custom key bindings.
 
