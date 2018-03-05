@@ -96,6 +96,22 @@
   (global-set-key (kbd "M-S-<up>") 'move-text-up)
   (global-set-key (kbd "M-S-<down>") 'move-text-down))
 
+;; Hihghlight symbol under cursor.
+(use-package auto-highlight-symbol
+  :ensure t
+  :diminish highlight-mode)
+
+;; Allow to open files inside docker containers.
+(use-package docker-tramp
+  :ensure t)
+
+;; Use .editorconfig files.
+(use-package editorconfig
+  :ensure t
+  :diminish editorconfig-mode
+  :config
+  (editorconfig-mode 1))
+
 
 ;; Configuration related to movment and windows configuration.
 
@@ -118,17 +134,6 @@
   :bind ("C-'" . imenu-list-smart-toggle)
   :config
   (setq imenu-list-focus-after-activation t))
-
-;; Allow to open files inside docker containers.
-(use-package docker-tramp
-  :ensure t)
-
-;; Use .editorconfig files.
-(use-package editorconfig
-  :ensure t
-  :diminish editorconfig-mode
-  :config
-  (editorconfig-mode 1))
 
 
 ;; Additional file modes.

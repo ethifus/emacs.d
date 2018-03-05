@@ -7,6 +7,7 @@
   (eldoc-mode 1)
   (tide-hl-identifier 1)
   (company-mode 1)
+  (auto-highlight-symbol-mode)
   (electric-indent-local-mode t))
 
 ;; TypeScript Interactive Development Environment for Emacs.

@@ -36,7 +36,7 @@
   (setq org-default-notes-file "~/notes/notes.org")
   (setq org-capture-templates
         '(("n" "Note" entry (file+datetree "~/notes/notes.org") "* %?\n  %i")
-          ("w" "Words" item (file "~/notes/words.org") "%?\n")
+          ("w" "Word" item (file "~/notes/words.org") "%?\n")
           ("l" "Log time" entry
            (file+datetree (expand-file-name (format-time-string "~/notes/work/timeline_%Y.org") org-directory))
            "**** %?\n    %i" :clock-in t :clock-keep t)))

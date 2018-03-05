@@ -66,11 +66,6 @@
   (setq python-shell-interpreter "ipython"
         python-shell-interpreter-args "-i --simple-prompt"))
 
-;; Hihghlight symbol under cursor.
-(use-package auto-highlight-symbol
-  :ensure t
-  :diminish highlight-mode)
-
 ;; Maintain order in imports. This requires isort to be installed.
 (use-package py-isort
   :ensure t

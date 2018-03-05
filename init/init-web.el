@@ -1,5 +1,12 @@
 ;; Requirements: node.js, npm, typescript, tern.
 
+
+;; Add hs-minor-mode to js-mode (mostly for usage in JSON files)
+(use-package js
+  :config
+  (add-hook 'js-mode-hook (lambda () (hs-minor-mode t))))
+
+
 (use-package js2-mode
    :ensure t
    :mode "\\.js\\'"

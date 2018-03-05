@@ -20,7 +20,8 @@
 (require 'init-projectile)
 (require 'init-filestree)
 (require 'init-translate)
-(require 'init-other)
+(require 'init-spelling)
+(require 'init-common)
 (require 'init-custom-functions)
 
 (require 'init-golang)
