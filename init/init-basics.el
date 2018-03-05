@@ -7,6 +7,7 @@
 
 ;; Automatically sync buffer's content with files on disk.
 (use-package autorevert
+  :diminish (auto-revert-mode . " ↺")
   :init
   (global-auto-revert-mode t))
 
@@ -131,7 +132,7 @@
 
 ;; Stop cursor at CamelCase names with C-<left>/C-<right> movements.
 (use-package subword
-  :diminish subword-mode
+  :diminish
   :init (global-subword-mode t))
 
 ;; Mode to undo/redo windows layout with C-c <left>/C-c <right>.

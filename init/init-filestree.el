@@ -48,4 +48,5 @@
   :config
   (setq treemacs-header-function #'treemacs-projectile-create-header))
 
+
 (provide 'init-filestree)

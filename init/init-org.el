@@ -14,7 +14,8 @@
         org-support-shift-select t
         org-hide-emphasis-markers t
         org-clock-into-drawer nil
-        org-imenu-depth 5)
+        org-imenu-depth 5
+        org-clock-rounding-minutes 15)
   (font-lock-add-keywords
    'org-mode
    '(("^ +\\([-*]\\) "

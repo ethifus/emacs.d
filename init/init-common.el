@@ -32,7 +32,7 @@
 ;; Present nice undo tree, activated with C-x u.
 (use-package undo-tree
   :ensure t
-  :diminish undo-tree-mode
+  :diminish
   :config
   (global-undo-tree-mode)
   (setq undo-tree-visualizer-timestamp t
@@ -54,14 +54,14 @@
 ;; Display available keybindings in popup.
 (use-package which-key
   :ensure t
-  :diminish which-key-mode
+  :diminish
   :config
   (which-key-mode))
 
 ;; Display ugly ^L page breaks as tidy horizontal lines.
 (use-package page-break-lines
   :ensure t
-  :diminish page-break-lines-mode
+  :diminish
   :config
   (global-page-break-lines-mode))
 
@@ -78,7 +78,7 @@
 ;; Hihghlight changes in buffer after some operation.
 (use-package volatile-highlights
   :ensure t
-  :diminish volatile-highlights-mode)
+  :diminish)
 
 (use-package multiple-cursors
   :ensure t
@@ -99,7 +99,7 @@
 ;; Hihghlight symbol under cursor.
 (use-package auto-highlight-symbol
   :ensure t
-  :diminish highlight-mode)
+  :diminish)
 
 ;; Allow to open files inside docker containers.
 (use-package docker-tramp
@@ -108,7 +108,7 @@
 ;; Use .editorconfig files.
 (use-package editorconfig
   :ensure t
-  :diminish editorconfig-mode
+  :diminish
   :config
   (editorconfig-mode 1))
 
@@ -162,4 +162,4 @@
   (add-hook 'kotlin-mode-hook 'flycheck-mode))
 
 
-(provide 'init-other)
+(provide 'init-common)

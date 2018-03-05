@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp; folding-mode: t -*-
-;; Copyright (C) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017 Bartosz Biały
+;; Copyright (C) 2009-2018 Bartosz Biały
 ;;
 ;; This file is free software licensed under the terms of the
 ;; GNU General Public License, version 3 or later.
