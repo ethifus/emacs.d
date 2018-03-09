@@ -15,7 +15,13 @@
         org-hide-emphasis-markers t
         org-clock-into-drawer nil
         org-imenu-depth 5
-        org-clock-rounding-minutes 15)
+        org-clock-rounding-minutes 15
+        org-clock-in-resume t
+        org-time-clocksum-format
+            (quote (:hours "%d"
+                    :require-hours t
+                    :minutes ":%02d"
+                    :require-minutes t)))
   (font-lock-add-keywords
    'org-mode
    '(("^ +\\([-*]\\) "
