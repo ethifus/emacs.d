@@ -28,6 +28,7 @@
 
 ;; Turn off auto save.
 (setq auto-save-default nil)
+(setq auto-save-list-file-prefix nil)
 
 ;; Turn off backup.
 (setq-default backup-inhibited t)
