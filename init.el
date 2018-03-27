@@ -30,3 +30,7 @@
 (require 'init-irony)
 (require 'init-web-typescript)
 (require 'init-lisp)
+
+;; Load local configuration specific for this machine. The best place for this
+;; file is ~/.emacs.d/lisp/init-local.el.
+(require 'init-local nil 'noerror)

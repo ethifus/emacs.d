@@ -16,3 +16,9 @@
 /recentf
 /session.*
 /ido.last
+/lisp/init-local.el
+/url
+/eshell/
+/.cache/
+/.mc-lists.el
+/bookmarks
