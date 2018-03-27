@@ -1,18 +1,21 @@
 ;; Requirements: node.js, npm, typescript, tern.
 
+(defun setup-js2-mode ()
+  (auto-highlight-symbol-mode t)
+  (flycheck-mode 1))
 
 ;; Add hs-minor-mode to js-mode (mostly for usage in JSON files)
 (use-package js
   :config
   (add-hook 'js-mode-hook (lambda () (hs-minor-mode t))))
 
-
 (use-package js2-mode
    :ensure t
    :mode "\\.js\\'"
    :config
    (add-to-list 'interpreter-mode-alist '("nodejs" . js2-mode))
-   (add-hook 'js2-mode-hook #'js2-imenu-extras-mode))
+   (add-hook 'js2-mode-hook #'js2-imenu-extras-mode)
+   (add-hook 'js2-mode-hook 'setup-js2-mode))
 
 (use-package js2-refactor
   :ensure t

@@ -47,7 +47,7 @@
           ("l" "Log time" entry
            (file+datetree (expand-file-name (format-time-string "~/notes/work/timeline_%Y.org") org-directory))
            "**** %?\n    %i" :clock-in t :clock-keep t)))
-  (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))))
+  (setq org-todo-keywords '((sequence "TODO(t)" "BLOCKED(b)" "|" "DONE(d)" "CANCELLED(c)"))))
 
 (use-package org-bullets
   :ensure t
