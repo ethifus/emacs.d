@@ -29,6 +29,10 @@
 (use-package magit-popup
   :ensure t)
 
+(use-package diff-hl
+  :ensure t
+  :hook (prog-mode . turn-on-diff-hl-mode))
+
 ;; Present nice undo tree, activated with C-x u.
 (use-package undo-tree
   :ensure t
