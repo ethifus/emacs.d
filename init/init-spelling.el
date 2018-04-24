@@ -15,12 +15,14 @@
     (ispell-change-dictionary change)
     (message "Dictionary switched from %s to %s" dic change)))
 
-
-;; Default to english dictionary.
-(ispell-change-dictionary "english" t)
-
-
 (global-set-key (kbd "<f8>") 'fd-switch-dictionary)
+
+(use-package guess-language
+  :ensure t
+  :diminish guess-language-mode
+  :hook (test-mode . guess-language-mode)
+  :config
+  (setq guess-language-languages '(en pl)))
 
 
 (provide 'init-spelling)
