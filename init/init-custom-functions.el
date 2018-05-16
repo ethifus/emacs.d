@@ -39,4 +39,14 @@ buffer is not visiting a file."
 (global-set-key (kbd "C-x C-d") 'sudo-edit)
 
 
+(defun copy-full-path-to-kill-ring ()
+  "Copy buffer's full path to kill ring."
+  (interactive)
+  (when buffer-file-name
+    (message (buffer-file-name))
+    (kill-new (file-truename buffer-file-name))))
+
+(global-set-key (kbd "C-x p") 'copy-full-path-to-kill-ring)
+
+
 (provide 'init-custom-functions)

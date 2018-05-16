@@ -55,7 +55,7 @@
   (tool-bar-mode 0)  ;; remove tool bar
   (menu-bar-mode 0)  ;; remove menu bar
   (scroll-bar-mode 0)  ;; remove scroll bars
-  (set-fringe-mode '(8 . 0))  ;; set fringe size
+  (set-fringe-mode '(10 . 0))  ;; set fringe size
   (blink-cursor-mode t)  ;; turn on blinking cursor
   (setq-default cursor-type 'bar)
   (set-frame-font "DejaVuSansMono 11"))

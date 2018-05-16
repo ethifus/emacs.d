@@ -116,6 +116,14 @@
   :config
   (editorconfig-mode 1))
 
+;; Automaitcall save buffers when they lost focus when idle.
+(use-package super-save
+  :diminish
+  :ensure t
+  :init
+  (super-save-mode t)
+  (setq super-save-auto-save-when-idle t
+        auto-save-default nil))
 
 ;; Configuration related to movment and windows configuration.
 
