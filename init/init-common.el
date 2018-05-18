@@ -116,9 +116,9 @@
   :config
   (editorconfig-mode 1))
 
-;; Automaitcall save buffers when they lost focus when idle.
+;; Automaitcally save buffers when they lost focus or when idle.
 (use-package super-save
-  :diminish
+  :diminish (super-save-mode . " 💾")
   :ensure t
   :init
   (super-save-mode t)
@@ -145,7 +145,8 @@
   :ensure t
   :bind ("C-'" . imenu-list-smart-toggle)
   :config
-  (setq imenu-list-focus-after-activation t))
+  (setq imenu-list-focus-after-activation t
+        imenu-max-item-length nil))
 
 
 ;; Additional file modes.
