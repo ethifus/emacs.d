@@ -5,7 +5,7 @@
   (flycheck-mode 1)
   (setq flycheck-check-syntax-automatically '(save mode-enabled))
   (eldoc-mode 1)
-  (tide-hl-identifier 1)
+  (tide-hl-identifier)
   (company-mode 1)
   (auto-highlight-symbol-mode t)
   (electric-indent-local-mode t))
@@ -13,9 +13,8 @@
 ;; TypeScript Interactive Development Environment for Emacs.
 (use-package tide
   :ensure t
-  :init
-  (add-hook 'typescript-mode-hook 'setup-tide-mode)
-  (add-hook 'js2-mode-hook 'setup-tide-mode)
+  ;; :hook ((typescript-mode js2-mode) . setup-tide-mode)
+  :hook (typescript-mode . setup-tide-mode)
   :config
   ;; format options
   (setq tide-format-options

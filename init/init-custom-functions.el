@@ -49,4 +49,19 @@ buffer is not visiting a file."
 (global-set-key (kbd "C-x p") 'copy-full-path-to-kill-ring)
 
 
+(defun smart-beginning-of-line ()
+  "Move point to first non-whitespace character or beginning-of-line.
+
+Move point to the first non-whitespace character on this line.
+If point was already at that position, move point to beginning of line."
+  (interactive)
+  (let ((oldpos (point)))
+    (beginning-of-line)
+    (and (= oldpos (point))
+         (back-to-indentation))))
+
+(global-set-key [home] 'smart-beginning-of-line)
+(global-set-key "\C-a" 'smart-beginning-of-line)
+
+
 (provide 'init-custom-functions)

@@ -7,15 +7,15 @@
 (use-package js2-mode
    :ensure t
    :mode "\\.js\\'"
+   :hook ((js2-mode . js2-imenu-extras-mode)
+          (js2-mode . setup-js2-mode))
    :config
-   (add-to-list 'interpreter-mode-alist '("nodejs" . js2-mode))
-   (add-hook 'js2-mode-hook #'js2-imenu-extras-mode)
-   (add-hook 'js2-mode-hook 'setup-js2-mode))
+   (add-to-list 'interpreter-mode-alist '("nodejs" . js2-mode)))
 
 (use-package js2-refactor
   :ensure t
+  :hook (js2-mode . js2-refactor-mode)
   :config
-  (add-hook 'js2-mode-hook #'js2-refactor-mode)
   (js2r-add-keybindings-with-prefix "C-c C-r")
   (define-key js2-mode-map (kbd "C-k") #'js2r-kill))
 
@@ -57,7 +57,6 @@
 (use-package restclient
   :ensure t
   :config)
-
 
 (use-package rainbow-mode
   :ensure t

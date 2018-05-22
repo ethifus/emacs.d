@@ -1,9 +1,9 @@
 ;; Use company-mode as a completion framework.
 (use-package company
+  :hook (prog-mode . company-mode)
   :ensure t
   :config
-  (global-company-mode)
-  (add-hook 'prog-mode-hook 'company-mode))
+  (global-company-mode))
 
 (use-package expand-region
   :ensure t
@@ -79,11 +79,6 @@
        compilation-filter-start (point))))
   (add-hook 'compilation-filter-hook #'endless/colorize-compilation))
 
-;; Hihghlight changes in buffer after some operation.
-(use-package volatile-highlights
-  :ensure t
-  :diminish)
-
 (use-package multiple-cursors
   :ensure t
   :bind
@@ -96,9 +91,8 @@
 ;; Allow to move line or region up or down.
 (use-package move-text
   :ensure t
-  :init
-  (global-set-key (kbd "M-S-<up>") 'move-text-up)
-  (global-set-key (kbd "M-S-<down>") 'move-text-down))
+  :bind (("M-S-<up>" . move-text-up)
+         ("M-S-<down>" . move-text-down)))
 
 ;; Hihghlight symbol under cursor.
 (use-package auto-highlight-symbol
@@ -171,8 +165,7 @@
 
 (use-package flycheck-kotlin
   :ensure t
-  :init
-  (add-hook 'kotlin-mode-hook 'flycheck-mode))
+  :hook (kotlin-mode . flycheck-mode))
 
 
 (provide 'init-common)
