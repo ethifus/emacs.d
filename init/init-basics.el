@@ -206,11 +206,15 @@ Try the repeated popping up to 10 times."
 
 ;; Allows to switch windows with M-<up>, M-<down>, M-<left> and M-<right>;
 ;; bind-keys* allows to bind key sequence that is alway available.
-(bind-keys*
- ((kbd "M-<left>") . windmove-left)
- ((kbd "M-<right>") . windmove-right)
- ((kbd "M-<up>") . windmove-up)
- ((kbd "M-<down>") . windmove-down))
+(use-package windmove
+  :bind (("M-<left>" . windmove-left)
+         ("M-<right>" . windmove-right)
+         ("M-<up>" . windmove-up)
+         ("M-<down>" . windmove-down)))
+
+(use-package framemove
+  :config
+  (setq framemove-hook-into-windmove t))
 
 (global-set-key (kbd "C-c r") 'rgrep)
 (global-set-key (kbd "C-c f") 'find-name-dired)
