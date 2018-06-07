@@ -97,7 +97,8 @@
 ;; Hihghlight symbol under cursor.
 (use-package auto-highlight-symbol
   :ensure t
-  :diminish)
+  :diminish
+  :hook (prog-mode . auto-highlight-symbol-mode))
 
 ;; Allow to open files inside docker containers.
 (use-package docker-tramp
@@ -137,9 +138,10 @@
 
 (use-package imenu-list
   :ensure t
-  :bind ("C-'" . imenu-list-smart-toggle)
+  :bind* ("C-'" . imenu-list-smart-toggle)
   :config
   (setq imenu-list-focus-after-activation t
+        imenu-list-auto-resize t
         imenu-max-item-length nil))
 
 

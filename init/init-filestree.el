@@ -42,11 +42,10 @@
     (treemacs-filewatch-mode t)))
 
 (use-package treemacs-projectile
+  :after treemacs projectile
   :ensure t
   :bind
-  (:map global-map ([f9] . treemacs-projectile-toggle))
-  :config
-  (setq treemacs-header-function #'treemacs-projectile-create-header))
+  (:map global-map ([f9] . treemacs-projectile)))
 
 
 (provide 'init-filestree)

@@ -207,10 +207,10 @@ Try the repeated popping up to 10 times."
 ;; Allows to switch windows with M-<up>, M-<down>, M-<left> and M-<right>;
 ;; bind-keys* allows to bind key sequence that is alway available.
 (use-package windmove
-  :bind (("M-<left>" . windmove-left)
-         ("M-<right>" . windmove-right)
-         ("M-<up>" . windmove-up)
-         ("M-<down>" . windmove-down)))
+  :bind* (("M-<left>" . windmove-left)
+          ("M-<right>" . windmove-right)
+          ("M-<up>" . windmove-up)
+          ("M-<down>" . windmove-down)))
 
 (use-package framemove
   :config

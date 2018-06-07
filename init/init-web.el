@@ -1,8 +1,9 @@
 ;; Requirements: node.js, npm, typescript, tern.
 
 (defun setup-js2-mode ()
+  (flycheck-mode 1)
   (auto-highlight-symbol-mode t)
-  (flycheck-mode 1))
+  (electric-indent-local-mode t))
 
 (use-package js2-mode
    :ensure t
