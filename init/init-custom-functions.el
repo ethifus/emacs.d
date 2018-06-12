@@ -56,9 +56,9 @@ Move point to the first non-whitespace character on this line.
 If point was already at that position, move point to beginning of line."
   (interactive)
   (let ((oldpos (point)))
-    (beginning-of-line)
+    (back-to-indentation)
     (and (= oldpos (point))
-         (back-to-indentation))))
+         (beginning-of-line))))
 
 (global-set-key [home] 'smart-beginning-of-line)
 (global-set-key "\C-a" 'smart-beginning-of-line)
