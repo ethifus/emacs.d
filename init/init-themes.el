@@ -18,6 +18,7 @@
   (mapcar 'disable-theme custom-enabled-themes)
   (load-theme theme-symbol)
   (enable-theme theme-symbol)
+  (eth/tone-down-fringes)
   (setq custom-enabled-themes (list theme-symbol)))
 
 (defun eth/tone-down-fringes ()

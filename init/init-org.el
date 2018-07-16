@@ -29,10 +29,12 @@
 
   ;; Allow to execute code from SRC block in those languages.
   (org-babel-do-load-languages 'org-babel-load-languages
-                               '((sh . t)
+                               '((shell . t)
                                  (gnuplot . t)
                                  (python . t)
-                                 (emacs-lisp . t)))
+                                 (emacs-lisp . t)
+                                 (ditaa . t)))
+  (setq org-ditaa-jar-path "/usr/bin/ditaa")
   (add-hook 'org-mode-hook
             (lambda ()
               (progn

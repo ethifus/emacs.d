@@ -118,6 +118,7 @@
   :init
   (super-save-mode t)
   (setq super-save-auto-save-when-idle t
+        super-save-idle-duration 300
         auto-save-default nil))
 
 ;; Configuration related to movment and windows configuration.

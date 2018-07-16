@@ -33,3 +33,7 @@ Python modules:
 NodeJS modules:
 
     sudo npm install -g tern
+
+Optionally install `ditaa` to get diagrams in org-mode:
+
+    sudo apt install ditaa
