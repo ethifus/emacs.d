@@ -100,6 +100,12 @@
   :diminish
   :hook (prog-mode . auto-highlight-symbol-mode))
 
+(use-package dimmer
+  :ensure t
+  :init
+  (setq dimmer-fraction 0.3)
+  (dimmer-mode t))
+
 ;; Allow to open files inside docker containers.
 (use-package docker-tramp
   :ensure t)
