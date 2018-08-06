@@ -45,7 +45,10 @@
   :after treemacs projectile
   :ensure t
   :bind
-  (:map global-map ([f9] . treemacs-projectile)))
+  (:map global-map ([f9] . treemacs-projectile))
+  :config
+  (bind-keys* ("<next>" . scroll-up-command)
+              ("<prior>" . scroll-down-command)))
 
 
 (provide 'init-filestree)
