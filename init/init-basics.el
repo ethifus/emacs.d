@@ -150,6 +150,9 @@
 ;; Set faster method to access files through tramp.
 (setq tramp-default-method "ssh")
 
+;; Add human readable size to dired
+(setq dired-listing-switches "-alh")
+
 ;; Save places in files between sessions.
 (require 'saveplace)
 (setq-default save-place t)
