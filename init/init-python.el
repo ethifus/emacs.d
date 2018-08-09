@@ -3,6 +3,11 @@
   :mode "\\.py\\'"
   :interpreter (("python" . python-mode)
                 ("python3" . python-mode))
+  :bind (:map python-mode-map
+              ("C->" . python-indent-shift-right)
+              ("C-<" . python-indent-shift-left)
+              ("M-S-<up>" . elpy-nav-move-line-or-region-up)
+              ("M-S-<down>" . elpy-nav-move-line-or-region-down))
   :init
   (setq python-python-command "python3")
   (add-hook
@@ -12,11 +17,7 @@
            indent-tabs-mode nil)
      (auto-highlight-symbol-mode)
      (electric-indent-local-mode t)
-     (flycheck-mode)
-     (define-key python-mode-map (kbd "C->") 'python-indent-shift-right)
-     (define-key python-mode-map (kbd "C-<") 'python-indent-shift-left)
-     (define-key python-mode-map (kbd "M-S-<up>") 'elpy-nav-move-line-or-region-up)
-     (define-key python-mode-map (kbd "M-S-<down>") 'elpy-nav-move-line-or-region-down))))
+     (flycheck-mode))))
 
 ;; Use company-mode instead of auto-complete with jedi.
 (use-package company-jedi

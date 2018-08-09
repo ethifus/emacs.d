@@ -1,16 +1,14 @@
 ;; Enable Projectile globally.
 (use-package projectile
   :ensure t
+  :bind-keymap ("C-c p" . projectile-command-map)
   :config
-  (projectile-global-mode)
+  (projectile-mode t)
   ;; workaroud of projectile's slowing down emacs on remote fs
   (setq projectile-mode-line
-        '(:eval (if (file-remote-p default-directory)
-                    " P[]"
-                  (format " P[%s]" (projectile-project-name)))))
-  (setq projectile-completion-system 'ido)
-  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+        '(:eval (format " P[%s]" (projectile-project-name)))
+        projectile-completion-system 'ido
+        projectile-project-search-path '("~/repo/")))
 
 ;; Enable The Silver Searcher (to use with C-c p s s in Projectile).
 (use-package ag

@@ -17,20 +17,21 @@
 
 (use-package go-mode
   :ensure t
+  :bind (:map go-mode-map
+              ("M-." . godef-jump))
   :config
   ;;(require 'go-autocomplete)
   ;;(require 'auto-complete-config)
   (setq gofmt-command "goimports")
-  
+
   (require 'go-eldoc)
 
-  (add-hook 'go-mode-hook 'go-eldoc-setup)
-
   (defun my-go-mode-hook ()
-    (add-hook 'before-save-hook 'gofmt-before-save)
-    (local-set-key (kbd "M-.") 'godef-jump))
+    (add-hook 'before-save-hook 'gofmt-before-save))
 
+  (add-hook 'go-mode-hook 'go-eldoc-setup)
   (add-hook 'go-mode-hook 'my-go-mode-hook)
+
   (eval-after-load "go-mode"
     '(require 'flymake-go)))
 

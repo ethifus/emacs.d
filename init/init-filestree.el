@@ -22,6 +22,8 @@
 
 (use-package treemacs
   :ensure t
+  :bind (:map treemacs-mode-map
+              ("<mouse-1>" . treemacs-single-click-expand-action))
   :config
   (progn
     (setq treemacs-follow-after-init          t
@@ -33,19 +35,20 @@
           treemacs-change-root-without-asking nil
           treemacs-sorting                    'alphabetic-desc
           treemacs-show-hidden-files          t
-          treemacs-never-persist              nil
           treemacs-is-never-other-window      nil
           treemacs-goto-tag-strategy          'refetch-index
           treemacs-silent-filewatch           t
-          treemacs-silent-refresh             t)
+          treemacs-display-in-side-window     t
+          treemacs-silent-refresh             t
+          treemacs-recenter-after-file-follow t
+          treemacs-space-between-root-nodes   nil)
     (treemacs-follow-mode t)
     (treemacs-filewatch-mode t)))
 
 (use-package treemacs-projectile
-  :after treemacs projectile
+  ;; :after treemacs projectile
   :ensure t
-  :bind
-  (:map global-map ([f9] . treemacs-projectile))
+  :bind ("<f9>" . treemacs-projectile)
   :config
   (bind-keys* ("<next>" . scroll-up-command)
               ("<prior>" . scroll-down-command)))
