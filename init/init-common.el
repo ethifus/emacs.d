@@ -119,7 +119,7 @@
 
 ;; Automaitcally save buffers when they lost focus or when idle.
 (use-package super-save
-  :diminish (super-save-mode . " 💾")
+  :diminish (super-save-mode . " S")
   :ensure t
   :init
   (super-save-mode t)
