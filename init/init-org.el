@@ -44,10 +44,10 @@
   :init
   (setq org-default-notes-file "~/notes/notes.org")
   (setq org-capture-templates
-        '(("n" "Note" entry (file+datetree "~/notes/notes.org") "* %?\n  %i")
+        '(("n" "Note" entry (file+olp+datetree "~/notes/notes.org") "* %?\n  %i")
           ("w" "Word" item (file "~/notes/words.org") "%?\n")
           ("l" "Log time" entry
-           (file+datetree (expand-file-name (format-time-string "~/notes/work/timeline_%Y.org") org-directory))
+           (file+olp+datetree (lambda () (expand-file-name (format-time-string "~/notes/work/timeline_%Y.org") org-directory)))
            "**** %?\n    %i" :clock-in t :clock-keep t)))
   (setq org-todo-keywords '((sequence "TODO(t)" "BLOCKED(b)" "|" "DONE(d)" "CANCELLED(c)"))))
 
