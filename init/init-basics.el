@@ -226,6 +226,11 @@ Try the repeated popping up to 10 times."
 (global-set-key (kbd "M-2") 'split-window-below)
 (global-set-key (kbd "M-3") 'split-window-right)
 
+;; Rebind upcase-word, downcase-word and capitalize-word.
+(global-set-key (kbd "M-u") 'upcase-dwim)
+(global-set-key (kbd "M-l") 'downcase-dwim)
+(global-set-key (kbd "M-c") 'capitalize-dwim)
+
 (defun kill-default-buffer ()
   "Kill the currently active buffer -- set to C-x k so that users
 are not asked which buffer they want to kill."
