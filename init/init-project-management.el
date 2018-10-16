@@ -4,9 +4,7 @@
   :bind-keymap ("C-c p" . projectile-command-map)
   :config
   (projectile-mode t)
-  ;; workaroud of projectile's slowing down emacs on remote fs
-  (setq projectile-mode-line
-        '(:eval (format " P[%s]" (projectile-project-name)))
+  (setq projectile-mode-line-prefix " P"
         projectile-completion-system 'ido
         projectile-project-search-path '("~/repo/")))
 

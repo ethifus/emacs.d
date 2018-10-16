@@ -79,6 +79,17 @@
        compilation-filter-start (point))))
   (add-hook 'compilation-filter-hook #'endless/colorize-compilation))
 
+(use-package goto-addr
+  :hook ((compilation-mode . goto-address-mode)
+         (prog-mode . goto-address-prog-mode)
+         (eshell-mode . goto-address-mode)
+         (shell-mode . goto-address-mode))
+  :bind (:map goto-address-highlight-keymap
+              ("<RET>" . goto-address-at-point)
+              ("M-<RET>" . newline))
+  :commands (goto-address-prog-mode
+             goto-address-mode))
+
 (use-package multiple-cursors
   :ensure t
   :bind
@@ -119,13 +130,23 @@
 
 ;; Automaitcally save buffers when they lost focus or when idle.
 (use-package super-save
-  :diminish (super-save-mode . " S")
+  :diminish super-save-mode
   :ensure t
   :init
   (super-save-mode t)
-  (setq super-save-auto-save-when-idle t
-        super-save-idle-duration 300
+  (setq super-save-idle-duration 300
         auto-save-default nil))
+
+;; Allow to quickly test requests to REST APIs.
+(use-package restclient
+  :ensure t
+  :config)
+
+(use-package rainbow-mode
+  :ensure t
+  :config
+  (add-hook 'css-mode-hook 'rainbow-mode))
+
 
 ;; Configuration related to movment and windows configuration.
 

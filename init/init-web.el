@@ -54,15 +54,5 @@
          "\\.html?\\'"
          "\\.tsx\\'"))
 
-;; Allow to quickly test requests to REST APIs.
-(use-package restclient
-  :ensure t
-  :config)
-
-(use-package rainbow-mode
-  :ensure t
-  :config
-  (add-hook 'css-mode-hook 'rainbow-mode))
-
 
 (provide 'init-web)

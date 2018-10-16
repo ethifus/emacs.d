@@ -10,6 +10,7 @@
               ("M-S-<down>" . elpy-nav-move-line-or-region-down))
   :init
   (setq python-python-command "python3")
+  (setq flycheck-python-pycompile-executable "python3")
   (add-hook
    'python-mode-hook
    (lambda ()

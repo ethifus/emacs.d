@@ -17,7 +17,7 @@
 (require 'init-ido)
 (require 'init-eshell)
 
-(require 'init-projectile)
+(require 'init-project-management)
 (require 'init-filestree)
 (require 'init-translate)
 (require 'init-spelling)
