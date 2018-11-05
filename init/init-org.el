@@ -39,7 +39,7 @@
             (lambda ()
               (progn
                 (auto-fill-mode t)
-                (setq ispell-local-dictionary "pl")
+                (setq ispell-local-dictionary "en")
                 (flyspell-mode t))))
   :init
   (setq org-default-notes-file "~/notes/notes.org")
