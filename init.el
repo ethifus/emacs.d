@@ -15,7 +15,7 @@
 (require 'init-ibuffer)
 (require 'init-org)
 (require 'init-ido)
-(require 'init-eshell)
+(require 'init-shells)
 
 (require 'init-project-management)
 (require 'init-filestree)
