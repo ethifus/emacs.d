@@ -48,10 +48,9 @@
 (use-package treemacs-projectile
   ;; :after treemacs projectile
   :ensure t
-  :bind ("<f9>" . treemacs-projectile)
-  :config
-  (bind-keys* ("<next>" . scroll-up-command)
-              ("<prior>" . scroll-down-command)))
-
+  :bind (("<f9>" . treemacs-projectile)
+         :map treemacs-mode-map
+         ("<next>" . scroll-up-command)
+         ("<prior>" . scroll-down-command)))
 
 (provide 'init-filestree)
