@@ -20,8 +20,6 @@
               " "
               (mode 16 16 :left :elide)
               " "
-              ;; (vc-status 16 16 :left)
-              ;; " "
               filename-and-process)))
 
 (setq ibuffer-filter-group-name-face 'font-lock-doc-face)

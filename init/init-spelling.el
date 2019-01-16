@@ -17,13 +17,5 @@
 
 (global-set-key (kbd "<f8>") 'fd-switch-dictionary)
 
-;; FIXME: This seems not to work properly.
-;; (use-package guess-language
-;;   :ensure t
-;;   :diminish guess-language-mode
-;;   :hook (test-mode . guess-language-mode)
-;;   :config
-;;   (setq guess-language-languages '(en pl)))
-
 
 (provide 'init-spelling)

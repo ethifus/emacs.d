@@ -20,7 +20,8 @@ External requirements:
  * ispell (with Polish and English dictionaries),
  * silversearcher-ag,
  * node.js, npm and tern (for JavaScript editing - required by `init-web.el`),
- * typescript (for TypeScript editing - required by `init-web-typescript.el`),
+ * typescript and tide (for TypeScript editing - required by
+   `init-web-typescript.el`),
  * libclang (for irony-mode - required by `init-irony.el`).
 
 Packages for Ubuntu:
@@ -33,7 +34,7 @@ Python modules:
 
 NodeJS modules:
 
-    sudo npm install -g tern
+    sudo npm install -g tern tide react@15.0
 
 Optionally install `ditaa` to get diagrams in org-mode:
 

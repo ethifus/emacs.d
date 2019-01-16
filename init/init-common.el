@@ -51,9 +51,12 @@
 (use-package yasnippet
   :ensure t
   :init
-  (yas-global-mode t)
+  (yas-global-mode 1)
   ;; Disable yassnippet for term-mode.
   (add-hook 'term-mode-hook (lambda() (yas-minor-mode -1))))
+
+(use-package yasnippet-snippets
+  :ensure t)
 
 ;; Display available keybindings in popup.
 (use-package which-key
@@ -78,17 +81,6 @@
       (ansi-color-apply-on-region
        compilation-filter-start (point))))
   (add-hook 'compilation-filter-hook #'endless/colorize-compilation))
-
-(use-package goto-addr
-  :hook ((compilation-mode . goto-address-mode)
-         (prog-mode . goto-address-prog-mode)
-         (eshell-mode . goto-address-mode)
-         (shell-mode . goto-address-mode))
-  :bind (:map goto-address-highlight-keymap
-              ("<RET>" . goto-address-at-point)
-              ("M-<RET>" . newline))
-  :commands (goto-address-prog-mode
-             goto-address-mode))
 
 (use-package multiple-cursors
   :ensure t
@@ -144,8 +136,18 @@
 
 (use-package rainbow-mode
   :ensure t
+  :hook (css-mode-hook . rainbow-mode))
+
+(use-package browse-kill-ring
+  :ensure t
+  :bind ("C-c k" . browse-kill-ring))
+
+(use-package imenu-list
+  :ensure t
+  :bind* ("C-'" . imenu-list-smart-toggle)
   :config
-  (add-hook 'css-mode-hook 'rainbow-mode))
+  (setq imenu-list-focus-after-activation t
+        imenu-max-item-length nil))
 
 
 ;; Configuration related to movment and windows configuration.
@@ -160,16 +162,17 @@
 (use-package transpose-frame
   :ensure t)
 
-(use-package browse-kill-ring
-  :ensure t
-  :bind ("C-c k" . browse-kill-ring))
+;; Allows to switch windows with M-<up>, M-<down>, M-<left> and M-<right>;
+;; bind-keys* allows to bind key sequence that is alway available.
+(use-package windmove
+  :bind* (("M-<left>" . windmove-left)
+          ("M-<right>" . windmove-right)
+          ("M-<up>" . windmove-up)
+          ("M-<down>" . windmove-down)))
 
-(use-package imenu-list
-  :ensure t
-  :bind* ("C-'" . imenu-list-smart-toggle)
+(use-package framemove
   :config
-  (setq imenu-list-focus-after-activation t
-        imenu-max-item-length nil))
+  (setq framemove-hook-into-windmove t))
 
 
 ;; Additional file modes.

@@ -2,9 +2,6 @@
 (setq-default inhibit-startup-message t
               inhibit-startup-echo-area-message t)
 
-(use-package diminish
-  :ensure t)
-
 ;; Automatically sync buffer's content with files on disk.
 (use-package autorevert
   :diminish (auto-revert-mode . " ↺")
@@ -116,9 +113,6 @@
 ;; Don't tabify after rectangle commands.
 (setq-default cua-auto-tabify-rectangles nil)
 
-;; Standard Windows behaviour.
-(setq-default cua-keep-region-after-copy t)
-
 ;; Copy-paste should work with other X clients.
 (setq-default x-select-enable-clipboard t
               x-select-enable-primary t
@@ -132,9 +126,7 @@
 (file-name-shadow-mode t)
 
 ;; Stop cursor at CamelCase names with C-<left>/C-<right> movements.
-(use-package subword
-  :diminish
-  :init (global-subword-mode t))
+(global-subword-mode t)
 
 ;; Mode to undo/redo windows layout with C-c <left>/C-c <right>.
 (winner-mode t)
@@ -158,11 +150,10 @@
 (setq-default save-place t)
 
 (setq-default initial-scratch-message
-              (message
-               ";; GNU Emacs %s, started on: %s, init time took: %s.\n"
+              (format
+               ";; GNU Emacs %s, started on: %s.\n"
                emacs-version
-               (current-time-string)
-               (emacs-init-time)))
+               (current-time-string)))
 
 ;; Don't let the cursor go into minibuffer prompt.
 (setq minibuffer-prompt-properties
@@ -180,9 +171,6 @@ Try the repeated popping up to 10 times."
 (advice-add 'pop-to-mark-command :around #'modi/multi-pop-to-mark)
 
 (setq set-mark-command-repeat-pop t)
-
-;; Automatically close unused buffers.
-;(require 'midnight)
 
 ;; Setup unique buffers name.
 (require 'uniquify)
@@ -207,22 +195,10 @@ Try the repeated popping up to 10 times."
 (global-set-key (kbd "<XF86Back>") 'scroll-down)
 (global-set-key (kbd "<XF86Forward>") 'scroll-up)
 
-;; Allows to switch windows with M-<up>, M-<down>, M-<left> and M-<right>;
-;; bind-keys* allows to bind key sequence that is alway available.
-(use-package windmove
-  :bind* (("M-<left>" . windmove-left)
-          ("M-<right>" . windmove-right)
-          ("M-<up>" . windmove-up)
-          ("M-<down>" . windmove-down)))
-
-(use-package framemove
-  :config
-  (setq framemove-hook-into-windmove t))
-
 (global-set-key (kbd "C-c r") 'rgrep)
 (global-set-key (kbd "C-c f") 'find-name-dired)
-(global-set-key (kbd "M-1") 'delete-other-windows)
 (global-set-key (kbd "M-0") 'delete-window)
+(global-set-key (kbd "M-1") 'delete-other-windows)
 (global-set-key (kbd "M-2") 'split-window-below)
 (global-set-key (kbd "M-3") 'split-window-right)
 
