@@ -64,4 +64,17 @@ If point was already at that position, move point to beginning of line."
 (global-set-key "\C-a" 'smart-beginning-of-line)
 
 
+(defun duplicate-line ()
+  (interactive)
+  (let ((col (current-column)))
+    (move-beginning-of-line 1)
+    (kill-line)
+    (yank)
+    (newline)
+    (yank)
+    (move-to-column col)))
+
+(global-set-key (kbd "C-S-d") 'duplicate-line)
+
+
 (provide 'init-custom-functions)
