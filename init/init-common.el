@@ -26,8 +26,8 @@
   :config
   (setq magit-completing-read-function 'magit-ido-completing-read))
 
-(use-package magit-popup
-  :ensure t)
+;; (use-package magit-popup
+;;   :ensure t)
 
 (use-package diff-hl
   :ensure t
@@ -111,7 +111,8 @@
 
 ;; Allow to open files inside docker containers.
 (use-package docker-tramp
-  :ensure t)
+  :ensure t
+  :defer t)
 
 ;; Use .editorconfig files.
 (use-package editorconfig

@@ -127,6 +127,7 @@
 
 ;; Stop cursor at CamelCase names with C-<left>/C-<right> movements.
 (global-subword-mode t)
+(diminish 'subword-mode "")
 
 ;; Mode to undo/redo windows layout with C-c <left>/C-c <right>.
 (winner-mode t)

@@ -10,7 +10,8 @@
         ido-case-fold nil
         ido-use-faces nil
         ido-default-buffer-method 'selected-window)
-  (ido-mode t))
+  (ido-mode t)
+  (global-set-key (kbd "C-;") 'ido-switch-buffer))
 
 ;; Fuzzy matching for ido.
 (use-package flx-ido
