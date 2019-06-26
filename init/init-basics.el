@@ -126,8 +126,10 @@
 (file-name-shadow-mode t)
 
 ;; Stop cursor at CamelCase names with C-<left>/C-<right> movements.
-(global-subword-mode t)
-(diminish 'subword-mode "")
+(use-package subword
+  :diminish
+  :init
+  (global-subword-mode))
 
 ;; Mode to undo/redo windows layout with C-c <left>/C-c <right>.
 (winner-mode t)
