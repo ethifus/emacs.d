@@ -9,7 +9,8 @@
         ido-use-filename-at-point 'guess
         ido-case-fold nil
         ido-use-faces nil
-        ido-default-buffer-method 'selected-window)
+        ido-default-buffer-method 'selected-window
+        ido-auto-merge-work-directories-length -1)
   (ido-mode t)
   (global-set-key (kbd "C-;") 'ido-switch-buffer))
 
