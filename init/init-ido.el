@@ -30,11 +30,13 @@
 
 ;; Present ido search results as a grid.
 (use-package ido-grid-mode
-  :ensure t
+  :load-path "lisp/ido-grid-mode"
+  :pin manual
   :init
   (setq ido-grid-mode-min-rows 1
         ido-grid-mode-max-rows 15
         ido-grid-mode-prefix-scrolls t)
+  (require 'ido-grid-mode)
   (ido-grid-mode t))
 
 (use-package ido-completing-read+
