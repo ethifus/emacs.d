@@ -54,5 +54,10 @@
          "\\.html?\\'"
          "\\.tsx\\'"))
 
+(use-package nvm
+  :ensure t
+  :init
+  (nvm-use "v10.16.0"))
+
 
 (provide 'init-web)

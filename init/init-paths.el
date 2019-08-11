@@ -8,7 +8,7 @@
                            (mapcar (lambda (element) (concat ":" element)) paths))))
     (setq exec-path (append exec-path paths))))
 
-(eth/init-paths (list "~/.local/bin" "~/.local/lib/node_modules/bin"))
+(eth/init-paths (list "~/.local/bin"))
 
 
 ;; Add path to custom modules and init scripts.

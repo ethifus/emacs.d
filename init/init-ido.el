@@ -12,7 +12,7 @@
         ido-default-buffer-method 'selected-window
         ido-auto-merge-work-directories-length -1)
   (ido-mode t)
-  (global-set-key (kbd "C-;") 'ido-switch-buffer))
+  (bind-key* (kbd "C-;") 'ido-switch-buffer))
 
 ;; Fuzzy matching for ido.
 (use-package flx-ido

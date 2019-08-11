@@ -2,7 +2,6 @@
 (use-package projectile
   :ensure t
   :bind-keymap (("C-c p" . projectile-command-map)
-                ("M-z" . projectile-command-map)
                 ("s-z" . projectile-command-map))
   :config
   (projectile-mode t)
