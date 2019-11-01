@@ -234,5 +234,7 @@ are not asked which buffer they want to kill."
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
 
+(setq custom-theme-directory "~/.emacs.d/lisp")
+
 
 (provide 'init-basics)
