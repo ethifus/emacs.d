@@ -23,7 +23,9 @@
 (use-package treemacs
   :ensure t
   :bind (:map treemacs-mode-map
-              ("<mouse-1>" . treemacs-single-click-expand-action))
+              ("<mouse-1>" . treemacs-single-click-expand-action)
+              ("<next>" . scroll-up-command)
+              ("<prior>" . scroll-down-command))
   :config
   (progn
     (setq treemacs-follow-after-init          t
@@ -48,9 +50,6 @@
 (use-package treemacs-projectile
   ;; :after treemacs projectile
   :ensure t
-  :bind (("<f9>" . treemacs-projectile)
-         :map treemacs-mode-map
-         ("<next>" . scroll-up-command)
-         ("<prior>" . scroll-down-command)))
+  :bind (("<f9>" . treemacs-projectile)))
 
 (provide 'init-filestree)
