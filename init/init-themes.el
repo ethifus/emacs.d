@@ -48,5 +48,8 @@
 (add-hook 'after-load-theme-hook 'eth/tone-down-fringes)
 (eth/tone-down-fringes)
 
+(use-package gruvbox-theme
+  :ensure t)
+
 
 (provide 'init-themes)

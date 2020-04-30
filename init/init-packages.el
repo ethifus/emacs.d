@@ -1,8 +1,9 @@
 (require 'package)
 (package-initialize)
 
+(setq package-check-signature nil)
 (setq package-archives
-	  '(("gnu" . "https://elpa.gnu.org/packages/")
+      '(("gnu" . "https://elpa.gnu.org/packages/")
         ("melpa" . "https://melpa.org/packages/")))
 
 (if (not (package-installed-p 'use-package))

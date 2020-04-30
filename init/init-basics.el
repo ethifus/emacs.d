@@ -56,6 +56,7 @@
   (blink-cursor-mode t)  ;; turn on blinking cursor
   (setq-default cursor-type 'bar)
   (set-frame-font "DejaVuSansMono 11"))
+  (setq-default cursor-type 'box)
 
 (when (display-graphic-p)
   (setup-frame-decorations))

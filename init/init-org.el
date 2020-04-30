@@ -56,5 +56,8 @@
   :init
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
+(use-package htmlize
+  :ensure t)
+
 
 (provide 'init-org)

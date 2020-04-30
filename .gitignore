@@ -3,6 +3,7 @@
 /games
 /desktops
 /elpa
+/elpy
 /auto-save-list
 /ac-comphist.dat
 /.emacs.desktop
@@ -23,3 +24,4 @@
 /.mc-lists.el
 /bookmarks
 /projectile.cache
+/transient
